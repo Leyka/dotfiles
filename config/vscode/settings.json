@@ -1,0 +1,10 @@
+{
+    "editor.fontFamily": "'Fira Code', monospace",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 15,
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorTheme": "Horizon",
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true
+}
