@@ -1,4 +1,6 @@
 {
+  "workbench.colorTheme": "Horizon",
+  "workbench.iconTheme": "material-icon-theme",
   "editor.fontFamily": "Fira Code",
   "editor.fontLigatures": true,
   "editor.fontSize": 16,
