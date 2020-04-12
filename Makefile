@@ -14,7 +14,7 @@ configure:
 	# ~~ Vim ~~
 	cp config/vim/.vimrc ~
 	# ~~ VS Code ~~
-	cp config/vscode/settings.json ~/.config/Code\ -\ OSS/User
+	\cp -r config/vscode/settings.json ~/.config/Code/User
 	xargs -L 1 -a config/vscode/extensions.list code --install-extension
 	# ~~ Git ~~
 	git config --global core.editor "vim"
