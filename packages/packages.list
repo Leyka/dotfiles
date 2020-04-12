@@ -1,6 +1,6 @@
+base-devel
 bat
 chromium
-deluge
 fish
 guake
 htop
@@ -10,6 +10,7 @@ npm
 otf-fira-code
 python-pip
 spotify
+tig
 vim
 visual-studio-code-bin
 vlc
