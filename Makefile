@@ -4,6 +4,9 @@ install:
 install-laptop: install
 	xargs -L 1 -a packages/laptop.list yay --noconfirm --needed -S
 
+install-extra:
+	xargs -L 1 -a packages/extra.list yay --noconfirm --needed -S
+
 configure:
 	# ~~ Fish ~~
 	cp -a config/fish ~/.config
