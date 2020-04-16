@@ -1,0 +1,37 @@
+[user]
+	name = Skander
+
+[core]
+  editor = vim
+  pager = less -F -X
+
+[alias]
+  a = add
+  p = push
+  b = branch
+  bb = branch -a
+  bd = branch -d
+  cm = commit -m
+  ca = commit --amend
+  f = fetch --all
+  s = status -s
+  aa = add --all
+  co = checkout
+  remotes = remote -v
+  l = log --relative-date --graph --abbrev-commit -10
+  ll = log --relative-date --graph --abbrev-commit
+  go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
+
+[format]
+  pretty = format:%C(yellow)%h %Cblue%>(12)%ad %Cgreen%<(7)%aN%Cred%d %Creset%s
+
+[color]
+  ui = always
+  branch = always
+  diff = always
+  interactive = always
+  status = always
+  grep = always
+  pager = true
+  decorate = always
+  showbranch = always
