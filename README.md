@@ -1,4 +1,4 @@
-![](https://github.com/jglovier/dotfiles-logo/blob/master/dotfiles-logo.png?raw=true)
+<img src="https://github.com/jglovier/dotfiles-logo/blob/master/dotfiles-logo.png" width="250">
 
 # Installation 
 
