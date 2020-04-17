@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 #==========
 #  Helpers
@@ -54,8 +55,8 @@ sudo apt update -qq && sudo apt upgrade -yqq
 
 # install packages
 print "Installing packages ..."
-xargs -L 1 -a packages/shared sudo apt install -yqq
-xargs -L 1 -a packages/pi sudo apt install -yqq
+xargs -L 1 -a packages/shared.list sudo apt install -yqq
+xargs -L 1 -a packages/pi.list sudo apt install -yqq
 
 # installing node and yarn
 print "Installing Node.js ..."
