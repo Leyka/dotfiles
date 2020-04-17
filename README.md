@@ -1,10 +1,12 @@
-# dotfiles
+![](https://github.com/jglovier/dotfiles-logo/blob/master/dotfiles-logo.png?raw=true)
 
-My personal dotfiles for Arch Linux distribution
+# Installation 
 
-## Installation
+## Arch Linux
 
-### Raspberry Pi
+(Todo)
+
+## Raspberry Pi
 
 Create new user and delete existing `pi` user
 ```
@@ -14,14 +16,26 @@ $ sudo su - skan
 $ sudo pkill -u pi && sudo deluser -remove-home pi
 ```
 
-Clone dotfiles repo
+Clone dotfiles repo and run `setup_pi.sh`
 ```
 $ sudo apt update && sudo apt install -y git
-$ git clone https://github.com/Leyka/dotfiles.git && cd dotfiles
+$ git clone https://github.com/Leyka/dotfiles.git .dotfiles && cd .dotfiles
 $ ./setup_pi.sh
 ```
 
-# Git
+# Configuration 
+
+## Stow
+
+I use `stow` to automatically symlink my dotfiles
+
+Make sure you are under `dotfiles` folder and run
+
+```
+$ stow ~Svt vim tmux git
+```
+
+## Git
 
 Add `.gitconfig.local` file with
 ```ini
