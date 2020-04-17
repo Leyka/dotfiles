@@ -37,3 +37,9 @@ Add `.gitconfig.local` file with
   name = your name
   email = your@email.com
 ```
+
+# TODO
+- configure fail2ban (5 attempts, whitelist local ip)
+- configure ssh (disable root login, only authorize myself)
+- arch install script
+- arch doc 

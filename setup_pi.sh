@@ -35,8 +35,19 @@ check_command() {
 #==========
 #  Main
 #==========
-print "Preparing your Raspberry Pi"
+echo "$(tput setaf 2)
+                   .~~.   .~~.
+                  '. \ ' ' / .'$(tput setaf 1)
+                   .~ .~~~..~.
+                  : .~.'~'.~. :
+                 ~ (   ) (   ) ~
+                ( : '~'.~.'~' : )
+                 ~ .~ (   ) ~. ~
+                  (  : '~' :  ) $(tput sgr0)$(tput setaf 1)
+                   '~ .~~~. ~'"
+echo ""
 
+print "Preparing your Raspberry Pi"
 # system update
 print "Updating sytem ..."
 sudo apt update -qq && sudo apt upgrade -yqq
@@ -106,6 +117,3 @@ sudo apt -yq autoremove
 sudo apt -yq autoclean
 
 print_success "Done !"
-
-# next steps: 
-# - configure fail2ban (3 attempts)
