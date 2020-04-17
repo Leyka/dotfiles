@@ -11,15 +11,19 @@ reset="\033[0m"
 print() {
   echo -e "$yellow==> $1$reset"
 }
+
 print_success() {
   echo -e "$green==> $1$reset"
 }
+
 print_error() {
   echo -e "$red==> $1$reset"
 }
+
 command_exists () {
     type "$1" &> /dev/null ;
 }
+
 check_command() {
   if command_exists $1 ; then
     print_success "$1 installed"
@@ -65,6 +69,10 @@ sudo apt install -yqq python3-pip libffi-dev
 sudo pip3 install docker-compose
 check_command "docker-compose"
 
+# install the fuck
+print "Installing thefuck ..."
+sudo pip3 install thefuck
+
 # configuring startup apps 
 print "Configuring startup apps ..."
 chsh -s `which fish`
@@ -72,16 +80,15 @@ chsh -s `which fish`
 # configure firewall (web server + ssh)
 print "Configuring firewall ports: ssh + http/s + mosh ..."
 sudo ufw enable
-sudo ufw allow from 192.168.1.0/24 to any port 22
+sudo ufw allow from 192.168.1.0/24
 sudo ufw allow 80
 sudo ufw allow 443
-sudo ufw allow from 192.168.1.0/24 to any port 60000:61000/udp # mosh
 
 # clean up
 print "Cleaning up ..."
 sudo apt -yq autoremove && sudo apt -yq autoclean
 
-print_success "Done"
+print_success "Done !"
 
 # next steps: 
 # - remove pi user 
