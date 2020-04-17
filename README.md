@@ -32,7 +32,7 @@ I use `stow` to automatically symlink my dotfiles
 Make sure you are under `dotfiles` folder and run
 
 ```
-$ stow ~Svt vim tmux git
+$ stow fish git tmux vim
 ```
 
 ## Git

@@ -73,6 +73,10 @@ check_command "docker-compose"
 print "Installing thefuck ..."
 sudo pip3 install thefuck
 
+# install tmux plugin manager
+print "Installing tmux plugin manager ..."
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
 # configuring startup apps 
 print "Configuring startup apps ..."
 chsh -s `which fish`
@@ -86,11 +90,10 @@ sudo ufw allow 443
 
 # clean up
 print "Cleaning up ..."
-sudo apt -yq autoremove && sudo apt -yq autoclean
+sudo apt -yq autoremove 
+sudo apt -yq autoclean
 
 print_success "Done !"
 
 # next steps: 
-# - remove pi user 
-# - only authorize my user to connect on ssh 
 # - configure fail2ban (3 attempts)
