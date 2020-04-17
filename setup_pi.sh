@@ -82,11 +82,15 @@ print "Configuring startup apps ..."
 chsh -s `which fish`
 
 # configure firewall (web server + ssh)
-print "Configuring firewall ports: ssh + http/s + mosh ..."
+print "Configuring firewall ports (ufw) ..."
 sudo ufw enable
 sudo ufw allow from 192.168.1.0/24
 sudo ufw allow 80
 sudo ufw allow 443
+
+# symlink dotfiles with stow
+print "Symlink dotfiles using Stow ..."
+stow -v fish git tmux vim
 
 # clean up
 print "Cleaning up ..."

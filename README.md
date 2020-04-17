@@ -1,5 +1,9 @@
 <img src="https://github.com/jglovier/dotfiles-logo/blob/master/dotfiles-logo.png" width="250">
 
+My personal dotfiles for Arch Linux and Pi (used web as server)
+
+To configure my dotfiles, I use the dead simple [Stow](https://www.gnu.org/software/stow/manual/stow.html#Introduction). It's *magic*.
+
 # Installation 
 
 ## Arch Linux
@@ -24,16 +28,6 @@ $ ./setup_pi.sh
 ```
 
 # Configuration 
-
-## Stow
-
-I use `stow` to automatically symlink my dotfiles
-
-Make sure you are under `dotfiles` folder and run
-
-```
-$ stow fish git tmux vim
-```
 
 ## Git
 
