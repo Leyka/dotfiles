@@ -42,7 +42,8 @@ print "Updating sytem ..."
 sudo apt update -qq && sudo apt upgrade -yqq
 
 # install packages
-print "Installing Pi packages ..."
+print "Installing packages ..."
+xargs -L 1 -a packages/shared sudo apt install -yqq
 xargs -L 1 -a packages/pi sudo apt install -yqq
 
 # installing node and yarn
@@ -63,9 +64,12 @@ print "Installing Docker ..."
 curl -sSL https://get.docker.com | bash
 sudo usermod -aG docker $username
 check_command "docker"
+if command_exists "docker" ; then
+  sudo systemctl enable docker.service && sudo systemctl start docker.service
+fi
 
 print "Installing Docker-compose ... (might take a while)"
-sudo apt install -yqq python3-pip libffi-dev
+sudo apt install -yqq libffi-dev
 sudo pip3 install docker-compose
 check_command "docker-compose"
 
@@ -77,6 +81,10 @@ sudo pip3 install thefuck
 print "Installing tmux plugin manager ..."
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
+# install bat (cat with syntax highlight)
+print "Installing bat (cat with syntax highlight) ..."
+wget https://github.com/sharkdp/bat/releases/download/v0.13.0/bat_0.13.0_armhf.deb
+sudo dpkg -i bat_0.13.0_armhf.deb && rm bat_0.13.0_armhf.deb
 # configuring startup apps 
 print "Configuring startup apps ..."
 chsh -s `which fish`
