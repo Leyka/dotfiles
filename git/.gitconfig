@@ -1,25 +1,29 @@
-[user]
-	name = Skander
-
 [core]
   editor = vim
   pager = less -F -X
 
 [alias]
   a = add
+  aa = add --all
   p = push
   b = branch
   bb = branch -a
   bd = branch -d
-  cm = commit -m
+  c = commit -m
   ca = commit --amend
-  f = fetch --all
-  s = status -s
-  aa = add --all
-  co = checkout
-  remotes = remote -v
+  ch = checkout
+  d = diff
+  ds = diff --staged
+  f = fetch --all 
   l = log --relative-date --graph --abbrev-commit -10
   ll = log --relative-date --graph --abbrev-commit
+  r = rebase
+  ra = rebase --abort
+  rc = rebase --continue
+  ri = rebase -i
+  rh = reset --hard
+  s = status -s
+  remotes = remote -v
   go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
 
 [format]

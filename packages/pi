@@ -1,4 +1,5 @@
 curl
+fail2ban
 fish
 htop
 iftop
