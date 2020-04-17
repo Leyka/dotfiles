@@ -1,0 +1,41 @@
+[core]
+  editor = vim
+  pager = less -F -X
+
+[alias]
+  a = add
+  aa = add --all
+  p = push
+  b = branch
+  bb = branch -a
+  bd = branch -d
+  c = commit -m
+  ca = commit --amend
+  ch = checkout
+  d = diff
+  ds = diff --staged
+  f = fetch --all 
+  l = log --relative-date --graph --abbrev-commit -10
+  ll = log --relative-date --graph --abbrev-commit
+  r = rebase
+  ra = rebase --abort
+  rc = rebase --continue
+  ri = rebase -i
+  rh = reset --hard
+  s = status -s
+  remotes = remote -v
+  go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
+
+[format]
+  pretty = format:%C(yellow)%h %Cblue%>(12)%ad %Cgreen%<(7)%aN%Cred%d %Creset%s
+
+[color]
+  ui = always
+  branch = always
+  diff = always
+  interactive = always
+  status = always
+  grep = always
+  pager = true
+  decorate = always
+  showbranch = always

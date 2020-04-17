@@ -4,7 +4,7 @@ filetype plugin indent on
 
 " General
 syntax on
-set number 
+set number
 set ruler
 set visualbell
 set showmatch

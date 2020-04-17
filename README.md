@@ -1,29 +1,45 @@
-# dotfiles
+![](https://github.com/jglovier/dotfiles-logo/blob/master/dotfiles-logo.png?raw=true)
 
-My personal dotfiles for Arch Linux distribution.
+# Installation 
 
-## Installation
+## Arch Linux
 
-Make sure that [yay](https://github.com/Jguer/yay) is installed first. Yay is an AUR helper (Arch User Repository) that allows you to manage packages on Arch Linux
+(Todo)
 
-I use `make` command to do everything. Example of installation:
+## Raspberry Pi
+
+Create new user and delete existing `pi` user
+```
+$ sudo adduser skan
+$ sudo usermod -a -G adm,dialout,cdrom,sudo,audio,video,plugdev,games,users,input,netdev,gpio,i2c,spi skan
+$ sudo su - skan
+$ sudo pkill -u pi && sudo deluser -remove-home pi
+```
+
+Clone dotfiles repo and run `setup_pi.sh`
+```
+$ sudo apt update && sudo apt install -y git
+$ git clone https://github.com/Leyka/dotfiles.git .dotfiles && cd .dotfiles
+$ ./setup_pi.sh
+```
+
+# Configuration 
+
+## Stow
+
+I use `stow` to automatically symlink my dotfiles
+
+Make sure you are under `dotfiles` folder and run
 
 ```
-$ git clone https://github.com/Leyka/dotfiles.git
-$ cd dotfiles
-$ make install
-$ make configure
+$ stow fish git tmux vim
 ```
 
-## Laptop
+## Git
 
-For laptop use, I normally use **intel-undervolt** in order to reduce energy consumption and heat/noise problem, and **powertop** to minimize electric consumption.
-
-- [intel-undervolt documentation](https://wiki.archlinux.org/index.php/Undervolting_CPU)
-- [powertop documentation](https://wiki.archlinux.org/index.php/Powertop)
-
-To install all packages + those 2 packages I would do
-
-```
-$ make install-laptop
+Add `.gitconfig.local` file with
+```ini
+[user]
+  name = your name
+  email = your@email.com
 ```

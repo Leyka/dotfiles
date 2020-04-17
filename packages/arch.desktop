@@ -1,5 +1,7 @@
 base-devel
 bat
+docker
+docker-compose
 fish
 google-chrome
 guake
@@ -10,7 +12,10 @@ npm
 otf-fira-code
 python-pip
 spotify
+stow
+surfshark-vpn
 tig
+ttf-cascadia-code
 vim
 visual-studio-code-bin
 vlc
