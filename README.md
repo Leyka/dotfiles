@@ -1,15 +1,28 @@
 <img src="https://github.com/jglovier/dotfiles-logo/blob/master/dotfiles-logo.png" width="250">
 
+[Installation Arch](#arch) | [Installation Pi](#pi) | [Last configurations](#config)
+
 My personal dotfiles for Arch Linux and Pi (used web as server)
 
 To configure my dotfiles, I use the dead simple [Stow](https://www.gnu.org/software/stow/manual/stow.html#Introduction). It's *magic*.
 
 # Installation 
 
+<a name="arch"></a>
 ## Arch Linux
 
-(Todo)
+```
+$ git clone https://github.com/Leyka/dotfiles.git .dotfiles && cd .dotfiles
+$ ./setup_arch.sh
+```
 
+### Laptop
+
+For laptop use, I normally use **intel-undervolt** in order to reduce energy consumption and heat/noise problem, and **powertop** to minimize electric consumption.
+
+**alsa-tools** is used to fix [issue](https://www.reddit.com/r/MatebookXPro/comments/8z4pv7/fix_for_the_2_out_of_4_speakers_issue_on_linux/) with surround sound on laptop. 
+
+<a name="pi"></a>
 ## Raspberry Pi
 
 Create new user and delete existing `pi` user
@@ -27,7 +40,8 @@ $ git clone https://github.com/Leyka/dotfiles.git .dotfiles && cd .dotfiles
 $ ./setup_pi.sh
 ```
 
-# Configuration 
+<a name="config"></a>
+# Last configurations 
 
 ## Git
 
@@ -41,5 +55,5 @@ Add `.gitconfig.local` file with
 # TODO
 - configure fail2ban (5 attempts, whitelist local ip)
 - configure ssh (disable root login, only authorize myself)
-- arch install script
-- arch doc 
+- Add guake config to arch
+- Undervolt config (add y/n) script

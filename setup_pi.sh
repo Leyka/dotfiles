@@ -6,7 +6,7 @@ set -e
 #==========
 yellow="\e[93m"
 green="\e[92m"
-red=""
+red="\e[31m"
 reset="\033[0m"
 
 print() {
@@ -101,9 +101,10 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 print "Installing bat (cat with syntax highlight)"
 wget https://github.com/sharkdp/bat/releases/download/v0.13.0/bat_0.13.0_armhf.deb
 sudo dpkg -i bat_0.13.0_armhf.deb && rm bat_0.13.0_armhf.deb
-# configuring startup apps 
-print "Configuring startup apps"
-chsh -s `which fish`
+
+# fish
+print "Set fish as default shell"
+sudo chsh -s `which fish`
 
 # configure firewall (web server + ssh)
 print "Configuring firewall ports (ufw)"

@@ -4,10 +4,7 @@
 
 [alias]
   a = add
-  aa = add --all
-  p = push
   b = branch
-  bb = branch -a
   bd = branch -d
   c = commit -m
   ca = commit --amend
@@ -17,6 +14,7 @@
   f = fetch --all 
   l = log --relative-date --graph --abbrev-commit -10
   ll = log --relative-date --graph --abbrev-commit
+  p = push
   r = rebase
   ra = rebase --abort
   rc = rebase --continue

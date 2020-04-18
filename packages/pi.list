@@ -3,5 +3,7 @@ iftop
 make
 mosh
 sysstat
+tree
+tmux
 ufw
 vnstat
