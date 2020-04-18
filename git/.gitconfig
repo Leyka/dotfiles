@@ -38,3 +38,6 @@
   pager = true
   decorate = always
   showbranch = always
+
+[include]
+  path = ~/.gitconfig.local

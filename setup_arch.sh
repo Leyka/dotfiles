@@ -58,7 +58,12 @@ stow -v fish git vim Code
 print "Installing VS Code extensions"
 xargs -L 1 -a packages/vscode_extensions.list code --install-extension
 
-# startup apps
+# emojis
+print "Configuring emojis"
+mkdir -p ~/.config/fontconfig/conf.d
+\cp -r config/01-emoji.conf ~/.config/fontconfig/conf.d
+
+# startup
 # fish
 print "Setup fish as default shell"
 chsh -s `which fish`
@@ -97,6 +102,7 @@ EOF
   if [[ $ans = "y" || $ans = "Y" ]]; then
     \cp -r config/intel-undervolt.conf /etc
     sudo intel-undervolt apply
+    sudo systemctl enable intel-undervolt.service
     print_success "CPU undervolt applied"
   fi
 fi

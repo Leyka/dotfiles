@@ -50,7 +50,7 @@ $ ./setup_pi.sh
 
 ## Git
 
-Add to `.gitconfig` file
+Create `~/.gitconfig.local` file and add personal git infos
 
 ```ini
 [user]
@@ -62,5 +62,3 @@ Add to `.gitconfig` file
 
 - configure fail2ban (5 attempts, whitelist local ip)
 - configure ssh (disable root login, only authorize myself)
-- Add guake config to arch
-- Undervolt config (add y/n) script

@@ -1,3 +1,7 @@
+# general
 *.log
+
+# vscode
+.vscode
 !Code/.config/Code/User/settings.json
 Code/.config/Code/*
