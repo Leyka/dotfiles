@@ -1,5 +1,4 @@
 #!/bin/bash
-set -e
 
 #==========
 #  Helpers
@@ -20,6 +19,10 @@ command_exists () {
     type "$1" &> /dev/null ;
 }
 
+install_from_file() {
+  xargs -L 1 -a $1 yay -Sq --noconfirm --needed
+}
+
 #==========
 #  Main
 #==========
@@ -32,22 +35,20 @@ sudo pacman -Syu --noconfirm
 
 # install yay
 print "Installing Yay"
-sudo pacman -S yay --noconfirm
+sudo pacman -Sq yay --noconfirm --needed
 
-# install packages 
+# install packages
 print "Installing packages"
-xargs -L 1 -a packages/shared.list yay --noconfirm --needed -S
-xargs -L 1 -a packages/arch.list yay --noconfirm --needed -S
+install_from_file packages/shared.list
+install_from_file packages/arch.list
 
-if [[ $device = "Laptop" ]]; then
+if [[ $device = "Notebook" ]]; then
   # install laptop packages
   print "Installing laptop packages"
-  xargs -L 1 -a packages/arch_laptop.list yay --noconfirm --needed -S
+  install_from_file packages/arch_laptop.list
 fi
 
 print_success "Packages installed and updated"
-
-print "Starting Configuration"
 
 # linking dotfiles
 print "Symlink dotfiles using Stow"
@@ -59,24 +60,23 @@ xargs -L 1 -a packages/vscode_extensions.list code --install-extension
 
 # startup apps
 # fish
-print "Set fish as default shell"
-sudo chsh -s `which fish`
+print "Setup fish as default shell"
+chsh -s `which fish`
 # guake
-print "Enable guake on startup"
-ln -s /usr/share/applications/guake.desktop /etc/xdg/autostart/
+print "Enable Guake on startup"
+sudo ln -s /usr/share/applications/guake.desktop /etc/xdg/autostart/
 # docker
-print "Enable docker on startup"
-sudo systemctl enable docker.service 
+print "Enable Docker on startup"
+sudo systemctl enable docker.service
 sudo systemctl start docker.service
 
-# todo: guake
+if [[ $device = "Notebook" ]]; then
+  # spotify
+  print "Fixing Spotify display with HiDPI screen"
+  \cp -r config/spotify.desktop /usr/share/applications
 
-if [[ $device = "Laptop" ]]; then
-  # todo: intel-undervolt (ask before)
-  
-  # powertop 
+  # powertop
   print "Enable powertop autotune on startup"
-  sudo powertop --auto-tune
   sudo cat << EOF | sudo tee /etc/systemd/system/powertop.service
 [Unit]
 Description=Powertop tunings
@@ -90,10 +90,19 @@ RemainAfterExit=true
 WantedBy=multi-user.target
 EOF
   sudo systemctl daemon-reload && sudo systemctl enable powertop.service
+
+  # intel-undervolt (ask before)
+  print "Undervolting Intel CPU for Matebook X Pro only !!!"
+  read -p "Are you really really sure to continue ? (y/n)" ans
+  if [[ $ans = "y" || $ans = "Y" ]]; then
+    \cp -r config/intel-undervolt.conf /etc
+    sudo intel-undervolt apply
+    print_success "CPU undervolt applied"
+  fi
 fi
 
-# cleanup 
+# cleanup
 print "Cleanup"
-sudo yay -Sc --aur --noconfirm
+yay -Sc --aur --noconfirm
 
 print_success "Done"

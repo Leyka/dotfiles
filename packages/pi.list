@@ -2,6 +2,7 @@ fail2ban
 iftop
 make
 mosh
+python3-pip
 sysstat
 tree
 tmux

@@ -2,6 +2,7 @@ base-devel
 bat
 docker
 docker-compose
+thefuck
 google-chrome
 guake
 nodejs

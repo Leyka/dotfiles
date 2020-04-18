@@ -1,5 +1,4 @@
 #!/bin/bash
-set -e
 
 #==========
 #  Helpers
@@ -102,10 +101,6 @@ print "Installing bat (cat with syntax highlight)"
 wget https://github.com/sharkdp/bat/releases/download/v0.13.0/bat_0.13.0_armhf.deb
 sudo dpkg -i bat_0.13.0_armhf.deb && rm bat_0.13.0_armhf.deb
 
-# fish
-print "Set fish as default shell"
-sudo chsh -s `which fish`
-
 # configure firewall (web server + ssh)
 print "Configuring firewall ports (ufw)"
 sudo ufw enable
@@ -117,9 +112,13 @@ sudo ufw allow 443
 print "Symlink dotfiles using Stow"
 stow -v fish git tmux vim
 
+# fish
+print "Set fish as default shell"
+chsh -s `which fish`
+
 # clean up
 print "Cleaning up"
-sudo apt -yqq autoremove 
+sudo apt -yqq autoremove
 sudo apt -yqq autoclean
 
 print_success "Done !"

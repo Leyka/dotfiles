@@ -11,10 +11,11 @@
   ch = checkout
   d = diff
   ds = diff --staged
-  f = fetch --all 
+  f = fetch --all
   l = log --relative-date --graph --abbrev-commit -10
   ll = log --relative-date --graph --abbrev-commit
   p = push
+  pf = push -f
   r = rebase
   ra = rebase --abort
   rc = rebase --continue
