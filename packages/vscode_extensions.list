@@ -1,7 +1,5 @@
-CoenraadS.bracket-pair-colorizer
-dsznajder.es7-react-js-snippets
 eamodio.gitlens
-eg2.tslint
+CoenraadS.bracket-pair-colorizer
 esbenp.prettier-vscode
 formulahendry.auto-rename-tag
 enkia.tokyo-night
@@ -9,4 +7,6 @@ PKief.material-icon-theme
 ritwickdey.LiveServer
 VisualStudioExptTeam.vscodeintellicode
 steoates.autoimport
+eg2.tslint
 dsznajder.es7-react-js-snippets
+Gruntfuggly.todo-tree

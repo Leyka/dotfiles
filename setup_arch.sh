@@ -61,7 +61,7 @@ xargs -L 1 -a packages/vscode_extensions.list code --install-extension
 # emojis
 print "Configuring emojis"
 mkdir -p ~/.config/fontconfig/conf.d
-\cp -r config/01-emoji.conf ~/.config/fontconfig/conf.d
+\cp -r configs/01-emoji.conf ~/.config/fontconfig/conf.d
 
 # startup
 # fish
@@ -78,7 +78,7 @@ sudo systemctl start docker.service
 if [[ $device = "Notebook" ]]; then
   # spotify
   print "Fixing Spotify display with HiDPI screen"
-  \cp -r config/spotify.desktop /usr/share/applications
+  \cp -r configs/spotify.desktop /usr/share/applications
 
   # powertop
   print "Enable powertop autotune on startup"
@@ -100,7 +100,7 @@ EOF
   print "Undervolting Intel CPU for Matebook X Pro only !!!"
   read -p "Are you really really sure to continue ? (y/n)" ans
   if [[ $ans = "y" || $ans = "Y" ]]; then
-    \cp -r config/intel-undervolt.conf /etc
+    \cp -r configs/intel-undervolt.conf /etc
     sudo intel-undervolt apply
     sudo systemctl enable intel-undervolt.service
     print_success "CPU undervolt applied"
