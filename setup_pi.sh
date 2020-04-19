@@ -101,6 +101,10 @@ print "Installing bat (cat with syntax highlight)"
 wget https://github.com/sharkdp/bat/releases/download/v0.13.0/bat_0.13.0_armhf.deb
 sudo dpkg -i bat_0.13.0_armhf.deb && rm bat_0.13.0_armhf.deb
 
+# symlink dotfiles with stow
+print "Symlink dotfiles using Stow"
+stow -v fish git tmux vim
+
 # configure firewall (web server + ssh)
 print "Configuring firewall ports (ufw)"
 sudo ufw enable
@@ -108,9 +112,10 @@ sudo ufw allow from 192.168.1.0/24
 sudo ufw allow 80
 sudo ufw allow 443
 
-# symlink dotfiles with stow
-print "Symlink dotfiles using Stow"
-stow -v fish git tmux vim
+# configure fail2ban
+print "Configuring fail2ban"
+sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
+sudo service fail2ban restart
 
 # fish
 print "Set fish as default shell"
