@@ -17,6 +17,16 @@ $ git clone https://github.com/Leyka/dotfiles.git .dotfiles && cd .dotfiles
 $ ./setup_arch.sh
 ```
 
+### Tweaks
+
+- General
+  - Check Over-Amplification
+- Appearance
+  - Applications: Arc-Darker
+  - Cursor: Xcursor-breezer
+  - Icons: Qogir
+  - Shell: Arc
+
 ### Laptop
 
 For laptop use, I normally use **intel-undervolt** in order to reduce energy consumption and heat/noise problem, and **powertop** to minimize electric consumption.

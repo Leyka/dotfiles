@@ -1,3 +1,4 @@
+arc-gtk-theme
 base-devel
 bat
 docker
@@ -9,6 +10,7 @@ nodejs
 notepadqq
 npm
 python-pip
+qogir-icon-theme
 spotify
 surfshark-vpn
 termius
