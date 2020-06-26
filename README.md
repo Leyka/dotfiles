@@ -1,3 +1,4 @@
+# dotfiles
 [Installation Arch](#arch) | [Installation Pi](#pi) | [Last configurations](#config)
 
 My personal dotfiles for Arch Linux and Pi (used web as server)
