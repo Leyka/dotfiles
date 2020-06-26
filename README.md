@@ -1,5 +1,3 @@
-<img src="https://github.com/jglovier/dotfiles-logo/blob/master/dotfiles-logo.png" width="250">
-
 [Installation Arch](#arch) | [Installation Pi](#pi) | [Last configurations](#config)
 
 My personal dotfiles for Arch Linux and Pi (used web as server)
