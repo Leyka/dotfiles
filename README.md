@@ -1,5 +1,5 @@
 # dotfiles
-[Installation Arch](#arch) | [Installation Pi](#pi) | [Last configurations](#config)
+[Installation Arch](#arch) | [Installation Pi/Ubuntu](#pi) | [Last configurations](#config)
 
 My personal dotfiles for Arch Linux and Pi (used web as server)
 
@@ -34,15 +34,23 @@ For laptop use, I normally use **intel-undervolt** in order to reduce energy con
 
 <a name="pi"></a>
 
-## Raspberry Pi
+## Raspberry Pi / Ubuntu Server
+
+Example with Raspberry Pi, but Ubuntu Server is similar except username is `ubuntu` (password `ubuntu` also)
 
 Create new user and delete existing `pi` user
 
 ```
-$ sudo adduser skan
-$ sudo usermod -a -G adm,dialout,cdrom,sudo,audio,video,plugdev,games,users,input,netdev,gpio,i2c,spi skan
-$ sudo su - skan
-$ sudo pkill -u pi && sudo deluser -remove-home pi
+sudo adduser skan
+sudo usermod -aG sudo skan
+sudo su - skan
+sudo pkill -u pi
+```
+
+SSH will disconnect... Then:
+
+```
+sudo deluser -remove-home pi
 ```
 
 Clone dotfiles repo and run `setup_pi.sh`

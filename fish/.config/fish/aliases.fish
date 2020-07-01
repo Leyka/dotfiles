@@ -1,10 +1,9 @@
 # navigation
 function ..    ; cd .. ; end
 function ...   ; cd ../.. ; end
-function ....  ; cd ../../.. ; end
 
 # utilities
-alias cl 'clear'
+alias cc 'clear'
 function grep     ; command grep --color=auto $argv ; end
 
 # files
@@ -15,7 +14,3 @@ alias cx 'chmod +x'
 
 # disk
 alias df 'df -h'
-
-# git
-alias g 'git'
-alias gs 'git status'
