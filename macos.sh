@@ -167,3 +167,5 @@ git lfs install
 # Apply macOS changes
 killall Dock &> /dev/null
 killall Finder &> /dev/null
+
+echo "Done!"
