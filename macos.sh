@@ -129,7 +129,6 @@ brew install node
 brew install npm
 brew install stow
 brew install tig
-brew install tmux
 brew install tree
 brew install vim
 brew install yarn
@@ -155,7 +154,7 @@ npm install --global pure-prompt
 ###############################################################################
 
 # Symlink dotfiles using gnu stow
-stow git vim tmux zsh
+stow git vim zsh
 
 ###############################################################################
 # Apply changes

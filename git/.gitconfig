@@ -8,6 +8,7 @@
   bd = branch -d
   c = commit -m
   ca = commit --amend
+  cfd = clean -fd
   ch = checkout
   d = diff
   ds = diff --staged
