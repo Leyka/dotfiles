@@ -1,36 +1,23 @@
 # dotfiles
-[Installation Arch](#arch) | [Installation Pi/Ubuntu](#pi) | [Last configurations](#config)
+[Installation macOS](#mac) | [Installation Pi/Ubuntu](#pi) | [Last configurations](#config)
 
-My personal dotfiles for Arch Linux and Pi (used web as server)
+My personal dotfiles for macOS and Pi (used as web server)
 
-To configure my dotfiles, I use the dead simple [Stow](https://www.gnu.org/software/stow/manual/stow.html#Introduction). It's _magic_.
+To configure my dotfiles, I use [Stow](https://www.gnu.org/software/stow/manual/stow.html#Introduction).
 
 # Installation
 
-<a name="arch"></a>
+<a name="mac"></a>
 
-## Arch Linux
+## macOS
+
+Install [iTerm2](https://iterm2.com/downloads.html)
 
 ```
-$ git clone https://github.com/Leyka/dotfiles.git .dotfiles && cd .dotfiles
-$ ./setup_arch.sh
+git clone https://github.com/Leyka/dotfiles.git .dotfiles && cd .dotfiles
+./macos.sh
 ```
 
-### Tweaks
-
-- General
-  - Check Over-Amplification
-- Appearance
-  - Applications: Arc-Darker
-  - Cursor: Xcursor-breezer
-  - Icons: Qogir
-  - Shell: Arc
-
-### Laptop
-
-For laptop use, I normally use **intel-undervolt** in order to reduce energy consumption and heat/noise problem, and **powertop** to minimize electric consumption.
-
-**alsa-tools** is used to fix [issue](https://www.reddit.com/r/MatebookXPro/comments/8z4pv7/fix_for_the_2_out_of_4_speakers_issue_on_linux/) with surround sound on laptop.
 
 <a name="pi"></a>
 
@@ -53,12 +40,12 @@ SSH will disconnect... Then:
 sudo deluser -remove-home pi
 ```
 
-Clone dotfiles repo and run `setup_pi.sh`
+Clone dotfiles repo and run `pi.sh`
 
 ```
 $ sudo apt update && sudo apt install -y git
 $ git clone https://github.com/Leyka/dotfiles.git .dotfiles && cd .dotfiles
-$ ./setup_pi.sh
+$ ./pi.sh
 ```
 
 <a name="config"></a>

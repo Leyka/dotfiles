@@ -1,7 +1,3 @@
-# general
-*.log
-
-# vscode
+.DS_STORE
+.log
 .vscode
-!Code/.config/Code/User/settings.json
-Code/.config/Code/*
