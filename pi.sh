@@ -20,7 +20,7 @@ packages=(
   ufw
   vim
 )
-sudo apt-get install -yqq ${packages[@]}
+sudo apt-get install -yqq "${packages[@]}"
 
 # Symlink dotfiles
 stow git tmux vim
