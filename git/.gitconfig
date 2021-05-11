@@ -7,7 +7,7 @@
   b = branch
   bd = branch -d
   c = commit -m
-  ca = commit --amend
+  ca = commit --amend --reuse-message HEAD
   cfd = clean -fd
   ch = checkout
   d = diff
