@@ -12,8 +12,6 @@ xcode-select --install
 sudo scutil --set ComputerName "skandair"
 sudo scutil --set HostName "skandair"
 sudo scutil --set LocalHostName "skandair"
-# Disable Notification Center and remove the menu bar icon
-launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist 2> /dev/null
 # Disable auto-correct
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 # Disable smart quotes
@@ -60,9 +58,6 @@ sudo pmset -b sleep 5
 # Screen
 ###############################################################################
 
-# Require password immediately after sleep or screen saver begins
-defaults write com.apple.screensaver askForPassword -int 1
-defaults write com.apple.screensaver askForPasswordDelay -int 0
 # Disable shadow in screenshots
 defaults write com.apple.screencapture disable-shadow -bool true
 # Enable subpixel font rendering on non-Apple LCDs
