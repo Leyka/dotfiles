@@ -120,8 +120,7 @@ brew install git
 brew install git-lfs
 brew install httpie
 brew install nmap
-brew install node
-brew install npm
+brew install nvm
 brew install stow
 brew install tig
 brew install tree
@@ -150,6 +149,13 @@ npm install --global pure-prompt
 
 # Symlink dotfiles using gnu stow
 stow git vim zsh
+
+###############################################################################
+# Node.js 
+###############################################################################
+# Install LTS with nvm
+nvm install lts 
+nvm use lts
 
 ###############################################################################
 # Apply changes
