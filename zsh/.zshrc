@@ -1,6 +1,8 @@
 export ZSH=$HOME/.oh-my-zsh
 
 # Enable theme: Pure (https://github.com/sindresorhus/pure)
+fpath+=/opt/homebrew/share/zsh/site-functions
+
 autoload -U promptinit; promptinit
 prompt pure
 ZSH_THEME=""
