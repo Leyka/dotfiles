@@ -29,8 +29,10 @@ brew install bat
 brew install git
 brew install git-lfs
 brew install httpie
+brew install jq
 brew install nmap
 brew install nvm
+brew install neovim
 brew install pure
 brew install stow
 brew install tig
@@ -61,7 +63,7 @@ rm -f ~/.gitconfig ~/.vimrc ~/.zshrc
 stow git vim zsh
 
 ###############################################################################
-# Node.js 
+# Node.js
 ###############################################################################
 # Install LTS with nvm
 mkdir ~/.nvm
