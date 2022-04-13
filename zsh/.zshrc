@@ -20,7 +20,6 @@ if [[ -e $HOME/.zsh_aliases ]]; then
 fi
 
 # Oh my zsh
-export ZSH=$HOME/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
 # Homebrew
@@ -28,8 +27,6 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Pyenv
 eval "$(pyenv init --path)"
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
 
 # Nvm
 source ~/.nvm/nvm.sh

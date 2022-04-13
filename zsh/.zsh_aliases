@@ -1,4 +1,5 @@
-# General
+# Common
+alias c="clear"
 alias hg="history|grep"
 
 # Replacements

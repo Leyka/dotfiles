@@ -1,6 +1,7 @@
 [core]
   editor = vim
   pager = less -F -X
+  excludesfile = ~/.gitignore
 
 [alias]
   a = add
