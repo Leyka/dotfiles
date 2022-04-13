@@ -91,6 +91,7 @@ packages=(
   nvm
   neovim
   pure
+  pyenv
   rbenv
   stow
   tig
@@ -108,6 +109,7 @@ brew tap homebrew/cask-fonts
 brew install --cask font-fira-code
 brew install --cask font-cascadia-code
 brew install --cask font-cascadia-code-pl
+brew cleanup
 
 ###############################################################################
 # ZSH
@@ -124,26 +126,29 @@ touch $HOME/.hushlogin
 ###############################################################################
 
 # Symlink dotfiles using gnu stow
-rm -f $HOME/.gitconfig $HOME/.vimrc $HOME/.zshrc
+rm -f $HOME/.gitconfig $HOME/.vimrc $HOME/.zshrc $HOME/.zshenv
 stow git vim zsh
 # Source .zshrc now so that nvm command below works
 source $HOME/.zshrc
+
+###############################################################################
+# Create directories
+###############################################################################
+
+# GOPATH
+mkdir -p $HOME/Lab/go
+# nvm
+mkdir $HOME/.nvm
+# pyenv
+mkdir $HOME/.pyenv
 
 ###############################################################################
 # Node.js
 ###############################################################################
 
 # Install LTS with nvm
-mkdir $HOME/.nvm
 nvm install --lts
 nvm use --lts
-
-###############################################################################
-# Golang
-###############################################################################
-
-# Create directory for GOPATH
-mkdir -p $HOME/Lab/go
 
 ###############################################################################
 # Git

@@ -27,6 +27,10 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Pyenv
 eval "$(pyenv init --path)"
+export PATH="$PATH:$PYENV_ROOT/bin"
+
+# Golang
+export PATH=$PATH:$(go env GOPATH)/bin
 
 # Rbenv
 eval "$(rbenv init -)"
