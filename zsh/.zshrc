@@ -28,6 +28,9 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # Pyenv
 eval "$(pyenv init --path)"
 
+# Rbenv
+eval "$(rbenv init -)"
+
 # Nvm
 source ~/.nvm/nvm.sh
 source /opt/homebrew/opt/nvm/nvm.sh

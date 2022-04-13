@@ -1,3 +1,5 @@
+#!/bin/bash
+
 ###############################################################################
 # General UI/UX
 ###############################################################################
@@ -72,28 +74,35 @@ defaults write com.googlecode.iterm2 PromptOnQuit -bool false
 ###############################################################################
 # Homebrew
 ###############################################################################
+
 # Install homebrew and add it to path
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 eval "$(/opt/homebrew/bin/brew shellenv)"
-# Install homebrew pckgs
+# Install homebrew packages
+packages=(
+  coreutils
+  bat
+  git
+  git-lfs
+  httpie
+  jq
+  golang
+  nmap
+  nvm
+  neovim
+  pure
+  rbenv
+  stow
+  tig
+  tree
+  vim
+  yarn
+  z
+)
+
 brew update
 brew upgrade
-brew install coreutils
-brew install bat
-brew install git
-brew install git-lfs
-brew install httpie
-brew install jq
-brew install nmap
-brew install nvm
-brew install neovim
-brew install pure
-brew install stow
-brew install tig
-brew install tree
-brew install vim
-brew install yarn
-brew install z
+brew install "${packages[@]}"
 # Install fonts
 brew tap homebrew/cask-fonts
 brew install --cask font-fira-code
@@ -103,6 +112,7 @@ brew install --cask font-cascadia-code-pl
 ###############################################################################
 # ZSH
 ###############################################################################
+
 # Install oh my zsh packages
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
@@ -112,18 +122,28 @@ touch $HOME/.hushlogin
 ###############################################################################
 # Symlink dotfiles
 ###############################################################################
+
 # Symlink dotfiles using gnu stow
 rm -f $HOME/.gitconfig $HOME/.vimrc $HOME/.zshrc
 stow git vim zsh
+# Source .zshrc now so that nvm command below works
 source $HOME/.zshrc
 
 ###############################################################################
 # Node.js
 ###############################################################################
+
 # Install LTS with nvm
 mkdir $HOME/.nvm
 nvm install --lts
 nvm use --lts
+
+###############################################################################
+# Golang
+###############################################################################
+
+# Create directory for GOPATH
+mkdir -p $HOME/Lab/go
 
 ###############################################################################
 # Git

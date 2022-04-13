@@ -37,4 +37,3 @@ sudo service fail2ban restart
 
 sudo apt -yqq autoremove
 sudo apt -yqq autoclean
-echo "Done!"
