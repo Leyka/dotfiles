@@ -15,7 +15,7 @@ Install [iTerm2](https://iterm2.com/downloads.html)
 
 ```
 git clone https://github.com/Leyka/dotfiles.git .dotfiles && cd .dotfiles
-./macos.sh
+./osx.sh
 ```
 
 
