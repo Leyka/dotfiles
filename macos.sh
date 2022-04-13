@@ -1,17 +1,7 @@
-#!/bin/bash
-
-# Update macOS and install xcode
-sudo softwareupdate -i -a
-xcode-select --install
-
 ###############################################################################
 # General UI/UX
 ###############################################################################
 
-# Set computer name (as done via System Preferences → Sharing)
-sudo scutil --set ComputerName "skandair"
-sudo scutil --set HostName "skandair"
-sudo scutil --set LocalHostName "skandair"
 # Disable auto-correct
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 # Disable smart quotes
@@ -34,34 +24,10 @@ defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadCorner
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -bool true
 defaults -currentHost write NSGlobalDomain com.apple.trackpad.trackpadCornerClickBehavior -int 1
 defaults -currentHost write NSGlobalDomain com.apple.trackpad.enableSecondaryClick -bool true
-# Trackpad: set sensitivity
-
 # Increase sound quality for Bluetooth headphones/headsets
 defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
 # Disable press-and-hold for keys in favor of key repeat
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
-
-###############################################################################
-# Energy saving
-###############################################################################
-
-# Enable lid wakeup
-sudo pmset -a lidwake 1
-# Sleep the display after 15 minutes
-sudo pmset -a displaysleep 15
-# Disable machine sleep while charging
-sudo pmset -c sleep 0
-# Set machine sleep to 5 minutes on battery
-sudo pmset -b sleep 5
-
-###############################################################################
-# Screen
-###############################################################################
-
-# Disable shadow in screenshots
-defaults write com.apple.screencapture disable-shadow -bool true
-# Enable subpixel font rendering on non-Apple LCDs
-defaults write NSGlobalDomain AppleFontSmoothing -int 1
 
 ###############################################################################
 # Finder
@@ -100,17 +66,15 @@ defaults write com.apple.dock show-recents -bool false
 # iTerm2
 ###############################################################################
 
-# Install the Solarized Dark theme for iTerm
-open "${HOME}/.dotfiles/themes/Snazzy.itermcolors"
-# Don’t display the annoying prompt when quitting iTerm
+# Don’t display prompt when quitting iTerm
 defaults write com.googlecode.iterm2 PromptOnQuit -bool false
 
 ###############################################################################
-# Packages
+# Homebrew
 ###############################################################################
-
-# Install homebrew
+# Install homebrew and add it to path
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+eval "$(/opt/homebrew/bin/brew shellenv)"
 # Install homebrew pckgs
 brew update
 brew upgrade
@@ -119,8 +83,11 @@ brew install bat
 brew install git
 brew install git-lfs
 brew install httpie
+brew install jq
 brew install nmap
 brew install nvm
+brew install neovim
+brew install pure
 brew install stow
 brew install tig
 brew install tree
@@ -129,43 +96,46 @@ brew install yarn
 brew install z
 # Install fonts
 brew tap homebrew/cask-fonts
-brew cask install font-fira-code
-brew cask install font-cascadia-code
-brew cask install font-cascadia-code-pl
-# Brew cleanup
-brew cleanup
+brew install --cask font-fira-code
+brew install --cask font-cascadia-code
+brew install --cask font-cascadia-code-pl
 
-# Install oh my zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+###############################################################################
+# ZSH
+###############################################################################
 # Install oh my zsh packages
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-# Install pure theme for ZSH
-npm install --global pure-prompt
+# Remove "Last login ..." message on new shell
+touch $HOME/.hushlogin
 
 ###############################################################################
 # Symlink dotfiles
 ###############################################################################
-
 # Symlink dotfiles using gnu stow
+rm -f $HOME/.gitconfig $HOME/.vimrc $HOME/.zshrc
 stow git vim zsh
+source $HOME/.zshrc
 
 ###############################################################################
-# Node.js 
+# Node.js
 ###############################################################################
 # Install LTS with nvm
-nvm install lts 
-nvm use lts
+mkdir $HOME/.nvm
+nvm install --lts
+nvm use --lts
 
 ###############################################################################
-# Apply changes
+# Git
 ###############################################################################
 
 # Configure git lfs
 git lfs install
 
+###############################################################################
+# Last steps
+###############################################################################
+
 # Apply macOS changes
 killall Dock &> /dev/null
 killall Finder &> /dev/null
-
-echo "Done!"

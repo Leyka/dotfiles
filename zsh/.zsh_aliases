@@ -1,0 +1,11 @@
+# Common
+alias c="clear"
+alias hg="history|grep"
+
+# Replacements
+alias vim="nvim"
+alias cat="bat"
+
+# Docker
+alias dops="docker ps -a"
+alias dols="docker image ls"
