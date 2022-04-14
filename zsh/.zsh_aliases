@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # Common
 alias c="clear"
 alias hg="history|grep"

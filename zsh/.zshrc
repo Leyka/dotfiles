@@ -19,6 +19,11 @@ if [[ -e $HOME/.zsh_aliases ]]; then
   source $HOME/.zsh_aliases
 fi
 
+# Functions
+if [[ -e $HOME/.zsh_functions ]]; then
+  source $HOME/.zsh_functions
+fi
+
 # Oh my zsh
 source $ZSH/oh-my-zsh.sh
 
@@ -32,9 +37,5 @@ export PATH="$PATH:$PYENV_ROOT/bin"
 # Golang
 export PATH=$PATH:$(go env GOPATH)/bin
 
-# Rbenv
-eval "$(rbenv init -)"
-
-# Nvm
 source ~/.nvm/nvm.sh
 source /opt/homebrew/opt/nvm/nvm.sh

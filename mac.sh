@@ -92,7 +92,6 @@ packages=(
   neovim
   pure
   pyenv
-  rbenv
   stow
   tig
   tree
