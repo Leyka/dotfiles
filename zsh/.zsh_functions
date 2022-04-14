@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+# cd into directory then list all files
+function cdl() {
+	cd $1 && ls -lFAh --color;
+}
+
 # Create a new directory and enter it
 function mkd() {
   mkdir -p "$@" && cd "$_";
@@ -13,8 +18,8 @@ function cdf() {
 
 # Force remove current directory
 function rmcd() {
-  local currdir="$(pwd)"
-  cd .. && rm -rf $currdir
+  local currdir="$(pwd)";
+  cd .. && rm -rf $currdir;
 }
 
 # Start an HTTP server from the current directory, optionally specifying the port
