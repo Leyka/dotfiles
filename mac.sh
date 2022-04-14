@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 ###############################################################################
 # General UI/UX
@@ -94,6 +94,7 @@ packages=(
   pyenv
   stow
   tig
+  thefuck
   tree
   vim
   yarn

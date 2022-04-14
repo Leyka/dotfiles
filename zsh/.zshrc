@@ -37,5 +37,9 @@ export PATH="$PATH:$PYENV_ROOT/bin"
 # Golang
 export PATH=$PATH:$(go env GOPATH)/bin
 
+# nvm
 source ~/.nvm/nvm.sh
 source /opt/homebrew/opt/nvm/nvm.sh
+
+# thefuck
+eval "$(thefuck --alias)"
