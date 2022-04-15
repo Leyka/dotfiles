@@ -3,12 +3,12 @@
 ###############################################################################
 # macOS settings
 ###############################################################################
-source .macOS
+source .macOS # comment to skip
 
 ###############################################################################
 # Homebrew
 ###############################################################################
-source .brew
+source .brew # comment to skip
 
 ###############################################################################
 # Oh my ZSH
@@ -38,10 +38,17 @@ mkdir -p $HOME/.pyenv
 ###############################################################################
 
 # Make sure these files/folders doesn't already exist
-files=(.gitconfig .gitignore .vimrc .zshrc .zshenv)
+files=(
+  .config/nvim
+  .gitconfig
+  .gitignore
+  .vimrc
+  .zshrc
+  .zshenv
+)
 rm -rf $HOME/"${files[@]}"
 # Symlink dotfiles using gnu stow
-stow git vim zsh
+stow git vim nvim zsh
 # Source .zshrc now so that nvm command below works
 source $HOME/.zshrc
 
