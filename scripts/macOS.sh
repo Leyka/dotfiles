@@ -60,7 +60,7 @@ defaults write com.apple.finder WarnOnEmptyTrash -bool false
 # Minimize windows into their application’s icon
 defaults write com.apple.dock minimize-to-application -bool true
 # Set the icon size of Dock items
-defaults write com.apple.dock tilesize -int 38
+defaults write com.apple.dock tilesize -int 42
 # Don’t show recent applications in Dock
 defaults write com.apple.dock show-recents -bool false
 

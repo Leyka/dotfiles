@@ -38,8 +38,10 @@ export PATH="$PATH:$PYENV_ROOT/bin"
 export PATH=$PATH:$(go env GOPATH)/bin
 
 # nvm
-source ~/.nvm/nvm.sh
-source /opt/homebrew/opt/nvm/nvm.sh
+if [[ -e $HOME/.nvm/nvm.sh ]]; then
+  source $HOME/.nvm/nvm.sh
+  source /opt/homebrew/opt/nvm/nvm.sh
+fi
 
 # thefuck
 eval "$(thefuck --alias)"

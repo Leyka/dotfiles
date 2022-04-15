@@ -27,16 +27,10 @@ touch $HOME/.hushlogin
 # Symlink dotfiles
 ###############################################################################
 
-# Make sure files/folders doesn't already exist
-remove=(
-  .gitconfig
-  .vimrc
-  .zshrc
-  .zshenv
-  .nvm
-)
+# Make sure these files/folders doesn't already exist
+files=(.gitconfig .vimrc .zshrc .zshenv)
+rm -rf $HOME/"${files[@]}"
 # Symlink dotfiles using gnu stow
-rm -rf $HOME/"${remove[@]}"
 stow git vim zsh
 # Source .zshrc now so that nvm command below works
 source $HOME/.zshrc
@@ -47,13 +41,17 @@ source $HOME/.zshrc
 
 # GOPATH
 mkdir -p $HOME/Lab/go
+# nvm
+mkdir -p $HOME/.nvm
 # pyenv
 mkdir -p $HOME/.pyenv
 
 ###############################################################################
-# Node.js
+# NVM / Node.js
 ###############################################################################
 
+# Link nvm default-packages (includes yarn)
+ln -s $PWD/nvm/default-packages $HOME/.nvm
 # Install LTS with nvm
 nvm install --lts
 nvm use --lts
