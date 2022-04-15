@@ -2,9 +2,8 @@
 
 # Install homebrew
 command -v brew >/dev/null 2>&1 || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
 eval "$(/opt/homebrew/bin/brew shellenv)"
-brew update
-brew upgrade
 
 # Install brew packages
 packages=(
@@ -28,6 +27,8 @@ packages=(
   z
 )
 
+brew update
+brew upgrade
 brew install "${packages[@]}"
 
 # Install fonts

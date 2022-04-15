@@ -12,17 +12,5 @@ Install [iTerm2](https://iterm2.com/downloads.html)
 
 ```
 git clone https://github.com/Leyka/dotfiles.git .dotfiles && cd .dotfiles
-./mac.sh
-```
-
-# Last configurations
-
-## Git
-
-Create `~/.gitconfig.local` file and add personal git infos
-
-```ini
-[user]
-  name = your name
-  email = your@email.com
+./install.sh
 ```
