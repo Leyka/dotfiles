@@ -15,35 +15,21 @@ plugins=(
 )
 
 # import aliases
-if [[ -e $HOME/.aliases ]]; then
-  source $HOME/.aliases
-fi
-
+[[ -e $HOME/.aliases ]] && source $HOME/.aliases
 # import functions
-if [[ -e $HOME/.functions ]]; then
-  source $HOME/.functions
-fi
-
+[[ -e $HOME/.functions ]] && source $HOME/.functions
 # oh my zsh
-if [[ -e $ZSH/oh-my-zsh.sh ]]; then
-  source $ZSH/oh-my-zsh.sh
-fi
-
+[[ -e $ZSH/oh-my-zsh.sh ]] && source $ZSH/oh-my-zsh.sh
 # homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
-
+# thefuck
+eval "$(thefuck --alias)"
 # pyenv
 eval "$(pyenv init --path)"
-export PATH="$PATH:$PYENV_ROOT/bin"
-
 # golang
-export PATH=$PATH:$(go env GOPATH)/bin
-
+[[ -x "$(command -v go)" ]] && export PATH=$PATH:$(go env GOPATH)/bin
 # nvm
 if [[ -e $HOME/.nvm/nvm.sh ]]; then
   source $HOME/.nvm/nvm.sh
   source /opt/homebrew/opt/nvm/nvm.sh
 fi
-
-# thefuck
-eval "$(thefuck --alias)"
