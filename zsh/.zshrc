@@ -1,3 +1,9 @@
+# Enable theme: Pure (https://github.com/sindresorhus/pure)
+fpath+=/opt/homebrew/share/zsh/site-functions
+autoload -U promptinit; promptinit
+prompt pure
+ZSH_THEME=""
+
 # ZSH Plugins
 plugins=(
   colorize
@@ -8,33 +14,29 @@ plugins=(
   z
 )
 
-# Enable theme: Pure (https://github.com/sindresorhus/pure)
-fpath+=/opt/homebrew/share/zsh/site-functions
-autoload -U promptinit; promptinit
-prompt pure
-ZSH_THEME=""
-
-# Aliases
-if [[ -e $HOME/.zsh_aliases ]]; then
-  source $HOME/.zsh_aliases
+# import aliases
+if [[ -e $HOME/.aliases ]]; then
+  source $HOME/.aliases
 fi
 
-# Functions
-if [[ -e $HOME/.zsh_functions ]]; then
-  source $HOME/.zsh_functions
+# import functions
+if [[ -e $HOME/.functions ]]; then
+  source $HOME/.functions
 fi
 
-# Oh my zsh
-source $ZSH/oh-my-zsh.sh
+# oh my zsh
+if [[ -e $ZSH/oh-my-zsh.sh ]]; then
+  source $ZSH/oh-my-zsh.sh
+fi
 
-# Homebrew
+# homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# Pyenv
+# pyenv
 eval "$(pyenv init --path)"
 export PATH="$PATH:$PYENV_ROOT/bin"
 
-# Golang
+# golang
 export PATH=$PATH:$(go env GOPATH)/bin
 
 # nvm
