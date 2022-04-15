@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+
+# cd into directory then list all files
+function cdl() {
+	cd $1 && ls -lFAh --color;
+}
+
+# Create a new directory and enter it
+function mkd() {
+  mkdir -p "$@" && cd "$_";
+}
+
+# Change working directory to the top-most Finder window location
+# short for `cdfinder`
+function cdf() {
+  cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')";
+}
+
+# Force remove current directory
+function rmcd() {
+  local currdir="$(pwd)";
+  cd .. && rm -rf $currdir;
+}
+
+# Start an HTTP server from the current directory, optionally specifying the port
+function server() {
+	local port="${1:-8000}";
+	sleep 1 && open "http://localhost:${port}/" &
+  python3 -m http.server $port
+}
+
+# `o` with no arguments opens the current directory, otherwise opens the given
+# location
+function o() {
+	if [ $# -eq 0 ]; then
+		open .;
+	else
+		open "$@";
+	fi;
+}
+
+# `tre` is a shorthand for `tree` with hidden files and color enabled, ignoring
+# the `.git` directory, listing directories first. The output gets piped into
+# `less` with options to preserve color and line numbers, unless the output is
+# small enough for one screen.
+function tre() {
+	tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
+}

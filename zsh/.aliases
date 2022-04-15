@@ -8,6 +8,9 @@ alias hg="history|grep"
 alias vim="nvim"
 alias cat="bat"
 
+# Network/ip
+alias ip="ipconfig getifaddr en0"
+
 # Docker
 alias dops="docker ps -a"
 alias dols="docker image ls"
