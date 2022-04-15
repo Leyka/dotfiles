@@ -1,7 +1,7 @@
 [core]
   editor = vim
   pager = less -F -X
-  excludesfile = ~/.gitignore_global
+  excludesfile = ~/.gitignore.global
 
 [alias]
   a = add
@@ -25,7 +25,11 @@
   rc = rebase --continue
   ri = rebase -i
   rh = reset --hard
+  rs = reset --soft
+  rs1 = reset --soft HEAD~1
   s = status -s
+  st = stash
+  stp = stash pop
   remotes = remote -v
   go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
 
