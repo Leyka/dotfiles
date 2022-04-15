@@ -2,11 +2,14 @@
 
 # Common
 alias c="clear"
+alias cx="chmod +x"
 alias hg="history|grep"
 
 # Replacements
-alias vim="nvim"
 alias cat="bat"
+alias mkdir="mkdir -pv"
+alias ping='ping -c 4'
+alias vim="nvim"
 
 # Network/ip
 alias ip="ipconfig getifaddr en0"
