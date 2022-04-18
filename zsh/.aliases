@@ -3,6 +3,7 @@
 # Common
 alias c="clear"
 alias cx="chmod +x"
+alias g="git"
 alias hg="history|grep"
 
 # Replacements

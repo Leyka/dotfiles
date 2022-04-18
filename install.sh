@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 ###############################################################################
 # macOS settings
@@ -15,23 +15,23 @@ source .brew # comment to skip
 ###############################################################################
 
 # Install oh my zsh
-[[ -d $HOME/.oh-my-zsh ]] || sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+[[ -d ~/.oh-my-zsh ]] || sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 # Install oh my zsh packages
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+[[ -d ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions ]] || git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+[[ -d ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting ]] || git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 # Remove "Last login ..." message on new shell
-touch $HOME/.hushlogin
+[[ -f ~/.hushlogin ]] || touch ~/.hushlogin
 
 ###############################################################################
 # Create directories
 ###############################################################################
 
 # GOPATH
-mkdir -p $HOME/Lab/go
+mkdir -p ~/Lab/go
 # nvm
-mkdir -p $HOME/.nvm
+mkdir -p ~/.nvm
 # pyenv
-mkdir -p $HOME/.pyenv
+mkdir -p ~/.pyenv
 
 ###############################################################################
 # Symlink dotfiles
@@ -46,18 +46,18 @@ files=(
   .zshrc
   .zshenv
 )
-rm -rf $HOME/"${files[@]}"
+rm -rf ~/"${files[@]}"
 # Symlink dotfiles using gnu stow
 stow git vim nvim zsh
 # Source .zshrc now so that nvm command below works
-source $HOME/.zshrc
+source ~/.zshrc
 
 ###############################################################################
 # NVM / Node.js
 ###############################################################################
 
 # Link nvm default-packages (includes yarn)
-ln -sf $PWD/nvm/default-packages $HOME/.nvm
+ln -sf $PWD/nvm/default-packages ~/.nvm
 # Install LTS with nvm
 nvm install --lts
 nvm use --lts
@@ -70,16 +70,15 @@ nvm use --lts
 git lfs install
 
 # Create .gitconfig.local
-[[ -e $HOME/.gitconfig.local ]] || cat > $HOME/.gitconfig.local <<EOF
+[[ -f ~/.gitconfig.local ]] || cat > ~/.gitconfig.local <<EOF
 [user]
   name = Skander
   email = @gmail.com
 EOF
 
 ###############################################################################
-# Last steps
+# Vim / Neovim
 ###############################################################################
 
-# Apply macOS changes
-killall Dock &> /dev/null
-killall Finder &> /dev/null
+# Install vim-plug
+[[ -f ~/.config/nvim/autoload/plug.vim ]] || curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim

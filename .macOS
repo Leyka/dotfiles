@@ -70,3 +70,10 @@ defaults write com.apple.dock show-recents -bool false
 
 # Don’t display prompt when quitting iTerm
 defaults write com.googlecode.iterm2 PromptOnQuit -bool false
+
+###############################################################################
+# ~ Apply changes
+###############################################################################
+
+killall Dock &> /dev/null
+killall Finder &> /dev/null
