@@ -2,8 +2,6 @@
 
 # Common
 alias c="clear"
-alias cx="chmod +x"
-alias g="git"
 alias hg="history|grep"
 
 # Replacements
@@ -11,6 +9,30 @@ alias cat="bat"
 alias mkdir="mkdir -pv"
 alias ping='ping -c 4'
 alias vim="nvim"
+
+# Git
+alias g="git"
+alias ga="git add ."
+alias gb="git branch"
+alias gc="git commit -m"
+alias gca="git commit --amend --reuse-message HEAD"
+alias gcfd="git clean -fd"
+alias gd="git diff"
+alias gds="git diff --staged"
+alias gf="git fetch --all"
+alias gg="git go"
+alias gl="git log --relative-date --graph --abbrev-commit -10"
+alias gp="git push"
+alias gpf="git push -f"
+alias gpl="git pull"
+alias gpr="git pull -r"
+alias gr="git rebase -i"
+alias gra="git rebase --abort"
+alias grc="git rebase --continue"
+alias grh="git reset --hard"
+alias grs="git reset --soft"
+alias grs1="git reset --soft HEAD~1"
+alias gs="git status"
 
 # Network/ip
 alias ip="ipconfig getifaddr en0"

@@ -4,33 +4,6 @@
   excludesfile = ~/.gitignore.global
 
 [alias]
-  a = add
-  b = branch
-  bd = branch -d
-  c = commit -m
-  ca = commit --amend --reuse-message HEAD
-  cfd = clean -fd
-  ch = checkout
-  chb = checkout -b
-  d = diff
-  ds = diff --staged
-  f = fetch --all
-  l = log --relative-date --graph --abbrev-commit -10
-  ll = log --relative-date --graph --abbrev-commit
-  p = push
-  pf = push -f
-  pp = pull
-  r = rebase
-  ra = rebase --abort
-  rc = rebase --continue
-  ri = rebase -i
-  rh = reset --hard
-  rs = reset --soft
-  rs1 = reset --soft HEAD~1
-  s = status -s
-  st = stash
-  stp = stash pop
-  remotes = remote -v
   go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
 
 [format]
