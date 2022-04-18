@@ -12,7 +12,8 @@ alias vim="nvim"
 
 # Git
 alias g="git"
-alias ga="git add ."
+alias ga="git add"
+alias gaa="git add ."
 alias gb="git branch"
 alias gc="git commit -m"
 alias gca="git commit --amend --reuse-message HEAD"

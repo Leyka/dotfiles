@@ -47,7 +47,7 @@ function tre() {
   tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
 }
 
-# Generate password, optionally specifying the length (default: 20)
+# Generate password, optionally specifying the length
 function genpass() {
   local length="${1:-20}";
   openssl rand -base64 $length;
@@ -61,4 +61,9 @@ function targz() {
 # extra .tar.gz
 function untargz() {
   tar -zxvf $1; rm -r $1;
+}
+
+# Clone git repo and cd into it
+function clone() {
+  git clone "$1" && cd "$(basename "$1" .git)"
 }
