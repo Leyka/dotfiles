@@ -1,3 +1,4 @@
+" General
 syntax on
 filetype plugin indent on
 
@@ -24,3 +25,14 @@ set hlsearch
 set smartcase
 set ignorecase
 set incsearch
+
+:set completeopt-=preview " For No Previews
+
+" Nerdtree
+nnoremap <C-f> :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-l> :call CocActionAsync('jumpDefinition')<CR>
+
+" Air-line
+let g:airline_powerline_fonts = 1

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-# Create a new directory and enter it
 
+# Create a new directory and enter it
 function mkcd() {
   mkdir -p "$@" && cd "$_";
 }
