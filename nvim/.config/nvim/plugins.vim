@@ -33,4 +33,7 @@ call plug#begin("~/.config/nvim/autoload")
     " Multiple cursors
     Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
+    " Displays tags in a window, ordered by scope
+    Plug 'preservim/tagbar'
+
 call plug#end()

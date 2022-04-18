@@ -10,6 +10,7 @@ fi
 # Install brew packages
 packages=(
   coreutils
+  ctags
   bat
   git
   git-lfs
