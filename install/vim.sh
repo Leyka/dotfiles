@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+# Link dotfiles
+rm -rf ~/.vimrc
+
+stow vim
