@@ -67,3 +67,8 @@ function untargz() {
 function clone() {
   git clone "$1" && cd "$(basename "$1" .git)"
 }
+
+# Show weather
+function now() {
+  curl https://wttr.in/\?1
+}
