@@ -15,7 +15,7 @@ call plug#begin("~/.config/nvim/autoload")
     " Better syntax highlight
     Plug 'sheerun/vim-polyglot'
 
-     " Comment stuff out (gcc & gc)
+    " Comment stuff out (gcc & gc)
     Plug 'tpope/vim-commentary'
 
     " Insert or delete brackets, parens, quotes in pair

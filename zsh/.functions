@@ -65,10 +65,10 @@ function untargz() {
 
 # Clone git repo and cd into it
 function clone() {
-  git clone "$1" && cd "$(basename "$1" .git)"
+  git clone "$1" && cd "$(basename "$1" .git)";
 }
 
 # Show weather
 function now() {
-  curl https://wttr.in/\?1
+  curl https://wttr.in/\?1;
 }
