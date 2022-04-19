@@ -3,6 +3,7 @@
 # Common
 alias c="clear"
 alias chx="chmod +x"
+alias f="fuck"
 alias hg="history|grep"
 
 # Replacements
