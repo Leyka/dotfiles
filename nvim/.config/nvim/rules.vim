@@ -30,6 +30,7 @@ set incsearch
 
 " Nerdtree
 let NERDTreeShowHidden=1
+let NERDTreeIgnore=['\.git$', '\.idea$', '\.vscode$']
 
 nnoremap <C-f> :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
