@@ -36,4 +36,6 @@ call plug#begin("~/.config/nvim/autoload")
     " Displays tags in a window, ordered by scope
     Plug 'preservim/tagbar'
 
+    " Markdown preview
+    Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 call plug#end()
