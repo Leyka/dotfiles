@@ -53,6 +53,11 @@ function genpass() {
   openssl rand -base64 $length;
 }
 
+# Generate uuid in lowercase
+function uuid() {
+  uuidgen | tr "[:upper:]" "[:lower:]"
+}
+
 # create .tar.gz
 function targz() {
   tar -zcvf $1.tar.gz $1; rm -r $1;
