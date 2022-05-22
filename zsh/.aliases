@@ -8,8 +8,9 @@ alias hg="history|grep"
 
 # Replacements
 alias cat="bat"
-alias mkdir="mkdir -pv"
+alias mkdir="mkdir -p"
 alias ping='ping -c 4'
+alias top='gotop'
 alias vim="nvim"
 
 # Git
@@ -37,7 +38,7 @@ alias grs="git reset --soft"
 alias grs1="git reset --soft HEAD~1"
 alias gs="git status"
 
-# Network/ip
+# Network
 alias ip="ipconfig getifaddr en0"
 
 # Docker

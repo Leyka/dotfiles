@@ -7,16 +7,19 @@ if [[ ! -x "$(command -v brew)" ]]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
+brew update
+brew upgrade
+
 # Install brew packages
 packages=(
   coreutils
-  ctags
   bat
   git
   git-lfs
   httpie
   jq
   golang
+  gotop
   nmap
   nvm
   neovim
@@ -24,14 +27,13 @@ packages=(
   pyenv
   stow
   tig
+  tldr
   thefuck
   tree
   vim
   z
 )
 
-brew update
-brew upgrade
 brew install "${packages[@]}"
 
 # Install fonts
