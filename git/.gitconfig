@@ -1,7 +1,13 @@
 [core]
   editor = nvim
-  pager = less -F -X
+  pager = diff-so-fancy | less --tabs=4 -RFX
   excludesfile = ~/.gitignore.global
+
+[include]
+  path = ~/.gitconfig.local
+
+[interactive]
+  diffFilter = diff-so-fancy --patch
 
 [alias]
   go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
@@ -19,9 +25,6 @@
   pager = true
   decorate = always
   showbranch = always
-
-[include]
-  path = ~/.gitconfig.local
 
 [filter "lfs"]
   clean = git-lfs clean -- %f

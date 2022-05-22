@@ -14,6 +14,7 @@ brew upgrade
 packages=(
   coreutils
   bat
+  diff-so-fancy
   git
   git-lfs
   httpie
