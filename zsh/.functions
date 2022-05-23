@@ -5,9 +5,11 @@ function mkcd() {
   mkdir -p "$@" && cd "$_";
 }
 
-# cd into directory then list all files
-function cdl() {
-  cd $1 && ls -lFAh --color;
+# Remove current directory
+function rmcd() {
+  local currdir
+  currdir="$(pwd)";
+  cd .. && rm -rf "$currdir";
 }
 
 # Change working directory to the top-most Finder window location
@@ -16,41 +18,26 @@ function cdf() {
   cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')";
 }
 
-# Remove current directory
-function rmcd() {
-  local currdir="$(pwd)";
-  cd .. && rm -rf $currdir;
-}
-
-# Start an HTTP server from the current directory, optionally specifying the port
-function server() {
-  local port="${1:-8000}";
-  sleep 1 && open "http://localhost:${port}/" &
-  python3 -m http.server $port;
+# cd into directory then list all files
+function cdl() {
+  cd "$1" && ls -lFAh --color;
 }
 
 # `o` with no arguments opens the current directory, otherwise opens the given
 # location
 function o() {
-	if [ $# -eq 0 ]; then
+	if [[ $# -eq 0 ]]; then
 		open .;
 	else
 		open "$@";
 	fi;
 }
 
-# `tre` is a shorthand for `tree` with hidden files and color enabled, ignoring
-# the `.git` directory, listing directories first. The output gets piped into
-# `less` with options to preserve color and line numbers, unless the output is
-# small enough for one screen.
-function tre() {
-  tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
-}
-
 # Generate password, optionally specifying the length
 function genpass() {
-  local length="${1:-20}";
-  openssl rand -base64 $length;
+  local length
+  length="${1:-20}";
+  openssl rand -base64 "$length";
 }
 
 # Generate uuid in lowercase
@@ -60,12 +47,12 @@ function uuid() {
 
 # create .tar.gz
 function targz() {
-  tar -zcvf $1.tar.gz $1; rm -r $1;
+  tar -zcvf "$1".tar.gz "$1"; rm -r "$1";
 }
 
 # extra .tar.gz
 function untargz() {
-  tar -zxvf $1; rm -r $1;
+  tar -zxvf "$1"; rm -r "$1";
 }
 
 # Clone git repo and cd into it
@@ -75,5 +62,13 @@ function clone() {
 
 # Show weather
 function now() {
-  curl https://wttr.in/\?1;
+  curl https://wttr.in/\?0;
+}
+
+# Clean uninstall a brew package
+function unbrew() {
+  if brew uninstall "$1"; then
+    brew autoremove
+    brew cleanup
+  fi
 }
