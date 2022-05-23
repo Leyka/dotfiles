@@ -7,6 +7,12 @@ plugins=(
   z
 )
 
+# Enable theme: Pure (https://github.com/sindresorhus/pure)
+fpath+=/opt/homebrew/share/zsh/site-functions
+autoload -U promptinit; promptinit
+prompt pure
+ZSH_THEME=""
+
 # import aliases
 [[ -f $HOME/.aliases ]] && source $HOME/.aliases
 # import functions
@@ -26,9 +32,3 @@ if [[ -f $HOME/.nvm/nvm.sh ]]; then
   source $HOME/.nvm/nvm.sh
   source /opt/homebrew/opt/nvm/nvm.sh
 fi
-
-# Enable theme: Pure (https://github.com/sindresorhus/pure)
-fpath+=/opt/homebrew/share/zsh/site-functions
-autoload -U promptinit; promptinit
-prompt pure
-ZSH_THEME=""

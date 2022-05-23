@@ -8,6 +8,7 @@ alias hg="history|grep"
 
 # Replacements
 alias cat="bat"
+alias find="fd"
 alias mkdir="mkdir -p"
 alias ping='ping -c 4'
 alias top='gotop'

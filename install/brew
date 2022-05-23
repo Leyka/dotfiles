@@ -15,6 +15,7 @@ packages=(
   coreutils
   bat
   diff-so-fancy
+  fd
   git
   git-lfs
   httpie
@@ -26,6 +27,7 @@ packages=(
   neovim
   pure
   pyenv
+  ripgrep
   shellcheck
   stow
   tig
