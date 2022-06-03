@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-set -e
-
-# Remove current directory
-curr_dir="$(pwd)"
-cd .. && rm -rf "$curr_dir"

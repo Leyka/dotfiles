@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+# short for `cdfinder`
+# change working directory to the top-most Finder window location
+function cdf() {
+  if [[ $OSTYPE != 'darwin'* ]]; then
+    echo "Error: cannot run macOS command"
+    exit 1
+  fi
+
+  cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')"
+}
+
+# change directory and list files
+function cdl() {
+  cd "$1" && ls -lFAh --color
+}
+
+function rmcd() {
+  local curr_dir
+  curr_dir="$(pwd)"
+  cd .. && rm -rf "$curr_dir"
+}
