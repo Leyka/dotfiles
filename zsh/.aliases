@@ -39,6 +39,9 @@ alias grs="git reset --soft"
 alias grs1="git reset --soft HEAD~1"
 alias gs="git status"
 
-# Docker
+# Docker / K8s
 alias dops="docker ps -a"
 alias dols="docker image ls"
+alias dostop='docker stop $(docker ps -a -q)'
+alias dorm='docker rm $(docker ps -a -q)'
+alias k="kubectl"
