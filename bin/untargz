@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+set -e
+
+tar -zxvf "$1" && rm -r "$1"

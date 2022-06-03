@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+set -e
+
+tar -zcvf "$1".tar.gz "$1" && rm -r "$1"

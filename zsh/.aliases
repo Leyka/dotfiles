@@ -39,9 +39,6 @@ alias grs="git reset --soft"
 alias grs1="git reset --soft HEAD~1"
 alias gs="git status"
 
-# Network
-alias ip="ipconfig getifaddr en0"
-
 # Docker
 alias dops="docker ps -a"
 alias dols="docker image ls"

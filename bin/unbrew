@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -e
+
+# Clean uninstall a brew package
+if brew uninstall "$1"; then
+  brew autoremove
+  brew cleanup
+fi
