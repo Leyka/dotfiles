@@ -1,14 +1,21 @@
 #!/usr/bin/env bash
 
-PYTHON_VERSION="3.10"
+python_version="3.10"
+
+# Fetch latest stable version
+latest="$(curl -s https://endoflife.date/api/python.json | jq -r '.[0].cycle')"
+if [[ ! -z "$latest" ]]; then
+  python_version="$latest"
+fi
 
 # Create directory
 mkdir -p ~/.pyenv
 
 # Install specific python version globally
-if [[ -z "$(pyenv versions | grep $PYTHON_VERSION | tail -1)" ]]; then
-  pyenv install $PYTHON_VERSION":latest"
-  pyenv global $(pyenv versions | grep $PYTHON_VERSION)
+if [[ -z "$(pyenv versions | grep $python_version | tail -1)" ]]; then
+  echo "Installing Python v$python_version..."
+  pyenv install $python_version":latest"
+  pyenv global $(pyenv versions | grep $python_version)
 else
-  echo "Python v$PYTHON_VERSION is already installed."
+  echo "Python v$python_version is already installed."
 fi
