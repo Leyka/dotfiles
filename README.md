@@ -6,7 +6,6 @@
 
 - [Firefox](https://www.mozilla.org/en-CA/firefox/new/)
 - [iTerm2](https://iterm2.com/downloads.html)
-- [VS Code](https://code.visualstudio.com/)
 
 ### Github
 
