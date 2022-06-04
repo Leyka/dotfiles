@@ -5,4 +5,5 @@ set -e
 if brew uninstall "$1"; then
   brew autoremove
   brew cleanup
+  echo "✅ $1 uninstalled"
 fi

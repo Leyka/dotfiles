@@ -13,7 +13,6 @@ brew upgrade
 packages=(
   coreutils
   bat
-  diff-so-fancy
   fd
   git
   git-lfs

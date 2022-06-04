@@ -8,7 +8,7 @@
 - [iTerm2](https://iterm2.com/downloads.html)
 - [VS Code](https://code.visualstudio.com/)
 
-### Git
+### Github
 
 Generate SSH key
 
@@ -51,7 +51,7 @@ Click on Colors tab -> Color Presets... (bottom right) -> Import -> `~/.dotfiles
 
 Change font by going on Text tab -> Font -> select `Hack Nerd Font Mono` and size `15`
 
-Hide the ugly top bar by going to Appearance section (eye) -> General tab -> select theme `Minimal`
+Hide top bar by going to Appearance section (eye) -> General tab -> select theme `Minimal`
 
 ### Last steps
 
