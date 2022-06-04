@@ -11,5 +11,5 @@ git lfs install
 [[ -f ~/.gitconfig.local ]] || cat > ~/.gitconfig.local <<EOF
 [user]
   name = Skander
-  email = @gmail.com
+  email = ...@gmail.com
 EOF

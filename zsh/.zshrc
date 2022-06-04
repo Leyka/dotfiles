@@ -28,7 +28,5 @@ eval "$(pyenv init --path)"
 # golang
 [[ -x "$(command -v go)" ]] && export PATH=$PATH:$(go env GOPATH)/bin
 # nvm
-if [[ -f $HOME/.nvm/nvm.sh ]]; then
-  source $HOME/.nvm/nvm.sh
-  source /opt/homebrew/opt/nvm/nvm.sh
-fi
+[[ -s "$(brew --prefix)/opt/nvm/nvm.sh" ]] && \. "$(brew --prefix)/opt/nvm/nvm.sh" # This loads nvm
+[[ -s "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" ]] && \. "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
