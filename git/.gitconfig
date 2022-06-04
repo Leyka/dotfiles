@@ -1,6 +1,6 @@
 [core]
   editor = nvim
-  pager = less --tabs=4 -RFX
+  pager = delta
   excludesfile = ~/.gitignore.global
 
 [include]
@@ -28,3 +28,18 @@
   smudge = git-lfs smudge -- %f
   process = git-lfs filter-process
   required = true
+
+# Delta as git diff tool
+
+[delta]
+  navigate = true  # use n and N to move between diff sections
+  line-numbers = true # show line numbers
+
+[interactive]
+  diffFilter = delta --color-only
+
+[merge]
+  conflictstyle = diff3
+
+[diff]
+  colorMoved = default

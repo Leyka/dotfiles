@@ -16,6 +16,7 @@ packages=(
   fd
   git
   git-lfs
+  git-delta
   httpie
   jq
   golang
