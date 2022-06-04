@@ -25,7 +25,7 @@ defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 
 # == Dock ==
 # Remove all icons
-defaults write com.apple.dock persistent-apps -array
+# defaults write com.apple.dock persistent-apps -array
 # Minimize windows into their application’s icon
 defaults write com.apple.dock minimize-to-application -bool true
 # Set the icon size of Dock items
