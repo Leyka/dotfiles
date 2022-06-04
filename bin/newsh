@@ -3,6 +3,8 @@ set -e
 
 cat > "$1" <<EOF
 #!/usr/bin/env bash
+
 EOF
 
 chmod +x "$1"
+vim $1
