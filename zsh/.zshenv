@@ -12,5 +12,5 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 # Go
 export GOPATH=$HOME/Lab/go
 
-# nvm 
+# nvm
 export NVM_DIR="$HOME/.nvm"

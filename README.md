@@ -1,14 +1,12 @@
 # dotfiles
 
-
-
 ## macOS
 
 ### Tools
 
-* [Firefox](https://www.mozilla.org/en-CA/firefox/new/)
-* [iTerm2](https://iterm2.com/downloads.html)
-* [VS Code](https://code.visualstudio.com/)
+- [Firefox](https://www.mozilla.org/en-CA/firefox/new/)
+- [iTerm2](https://iterm2.com/downloads.html)
+- [VS Code](https://code.visualstudio.com/)
 
 ### Git
 
@@ -45,8 +43,6 @@ Run install script
 
 Show home folder on finder by going to Finder -> Preferences -> Sidebar then check folders
 
-Show hidden folders: `cmd`+`shift`+`o`
-
 ### iTerm2 theme
 
 Change iTerm2 theme by going to Preferences -> Profiles
@@ -59,4 +55,4 @@ Hide the ugly top bar by going to Appearance section (eye) -> General tab -> sel
 
 ### Last steps
 
-* Fill email in `./gitconfig.local`
+- Fill email in `./gitconfig.local`
