@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-# Common
 alias c="clear"
 alias chx="chmod +x"
 alias f="fuck"
 alias hg="history|grep"
+alias ytdl="youtube-dl"
 
 # Replacements
 alias cat="bat"
