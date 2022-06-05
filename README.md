@@ -48,7 +48,9 @@ Change iTerm2 theme by going to Preferences -> Profiles
 
 Click on Colors tab -> Color Presets... (bottom right) -> Import -> `~/.dotfiles/themes/Snazzy.itermcolors` then select `Snazzy`
 
-Change font by going on Text tab -> Font -> select `Hack Nerd Font Mono` and size `15`
+Change font by going on Text tab -> Font -> select `Hack Nerd Font Mono`, size `15`, check `Use ligatures`
+
+Change cursor to `Vertical bar`
 
 Hide top bar by going to Appearance section (eye) -> General tab -> select theme `Minimal`
 

@@ -6,9 +6,6 @@
 [include]
   path = ~/.gitconfig.local
 
-[alias]
-  go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
-
 [format]
   pretty = format:%C(yellow)%h %Cblue%>(12)%ad %Cgreen%<(7)%aN%Cred%d %Creset%s
 

@@ -6,8 +6,7 @@ git add .
 if [[ $# == 0 ]]; then
   git commit --amend --reuse-message HEAD
   git push --force-with-lease
-  exit 0
+else
+  git commit -m "$*"
+  git push
 fi
-
-git commit -m "$*"
-git push

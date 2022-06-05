@@ -9,10 +9,10 @@ UNITS = {
   'h': 3600
 }
 
-def play_notification():
+def play_sound():
   for _ in range(3):
-    subprocess.Popen(['afplay', '/System/Library/Sounds/Tink.aiff'], stderr=subprocess.DEVNULL)
-    sleep(0.1)
+    subprocess.Popen(['afplay', '/System/Library/Sounds/Ping.aiff'], stderr=subprocess.DEVNULL)
+    sleep(0.2)
 
 def main():
   if len(argv) != 2:
@@ -34,7 +34,7 @@ def main():
     print(f'⏰ Countdown (seconds): {formatted}', end='\r')
     if duration == 0:
       print('✅')
-      play_notification()
+      play_sound()
     else:
       sleep(1)
     duration -= 1
