@@ -12,6 +12,7 @@ brew update && brew upgrade
 packages=(
   coreutils
   bat
+  exa
   fd
   ffmpeg
   git

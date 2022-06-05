@@ -13,8 +13,6 @@ autoload -U promptinit; promptinit
 prompt pure
 ZSH_THEME=""
 
-# import aliases
-[[ -f $HOME/.aliases ]] && source $HOME/.aliases
 # import functions
 [[ -f $HOME/.functions ]] && source $HOME/.functions
 # oh my zsh
@@ -30,3 +28,6 @@ eval "$(pyenv init --path)"
 # nvm
 [[ -s "$(brew --prefix)/opt/nvm/nvm.sh" ]] && \. "$(brew --prefix)/opt/nvm/nvm.sh" # This loads nvm
 [[ -s "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" ]] && \. "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
+
+# import aliases at the very end
+[[ -f $HOME/.aliases ]] && source $HOME/.aliases

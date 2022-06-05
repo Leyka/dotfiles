@@ -1,66 +1,71 @@
 #!/usr/bin/env bash
 
-alias ..= "cd .."
-alias ,,= "cd .."
-alias 2..="cd ../.."
-alias 3..="cd ../../.."
-alias 4..="cd ../../../.."
-alias 5..="cd ../../../../.."
+# Shortcuts
+alias ,,='cd ..'
+alias ..='cd ..'
+alias 2..='cd ../..'
+alias 3..='cd ../../..'
+alias 4..='cd ../../../..'
+alias 5..='cd ../../../../..'
 
-alias c="clear"
-alias cx="chmod +x"
-alias f="fuck"
-alias hg="history|grep"
-alias rmrf="rm -rf"
-alias sudp="sudo"
-alias ytdl="youtube-dl"
+alias c='clear'
+alias cx='chmod +x'
+alias f='fuck'
+alias hg='history|grep'
+alias rmrf='rm -rf'
+alias sudp='sudo'
+alias ytdl='youtube-dl'
 
 # Replacements
-alias cat="bat"
-alias find="fd"
-alias mkdir="mkdir -p"
+alias cat='bat'
+alias find='fd'
+alias grep='rg -i' # ripgrep
+alias mkdir='mkdir -p'
+alias l='exa -l'
+alias la='exa -la'
 alias ping='ping -c 4'
 alias top='gotop'
-alias vim="nvim"
+alias vi='nvim'
+alias vim='nvim'
 
 # Git
-alias ga="git add ."
-alias gb="git branch"
-alias gbd="git branch -d"
-alias gc="git commit -m"
-alias gca="git commit --amend --reuse-message HEAD"
-alias gcfd="git clean -fd"
-alias gd="git diff"
-alias gds="git diff --staged"
-alias gf="git fetch --all"
-alias gg="gitgo"
-alias gl="git log --relative-date --graph --abbrev-commit -10"
-alias gp="git push"
-alias gpf="git push --force-with-lease"
-alias gpl="git pull"
-alias gplr="git pull -r"
-alias gq="gitquick"
-alias gr="git rebase"
-alias gri="git rebase -i"
-alias gra="git rebase --abort"
-alias grc="git rebase --continue"
-alias grh="git reset --hard"
-alias grs="git reset --soft"
-alias grs1="git reset --soft HEAD~1"
-alias gs="git status"
+alias ga='git add .'
+alias gb='git branch'
+alias gbd='git branch -d'
+alias gc='git commit -m'
+alias gca='git commit --amend --reuse-message HEAD'
+alias gcfd='git clean -fd'
+alias gd='git diff'
+alias gds='git diff --staged'
+alias gf='git fetch --all'
+alias gg='gitgo'
+alias gl='git log --relative-date --graph --abbrev-commit -10'
+alias gp='git push'
+alias gpf='git push --force-with-lease'
+alias gpl='git pull'
+alias gplr='git pull -r'
+alias gq='gitquick'
+alias gr='git rebase'
+alias gri='git rebase -i'
+alias gra='git rebase --abort'
+alias grc='git rebase --continue'
+alias grh='git reset --hard'
+alias grs='git reset --soft'
+alias grs1='git reset --soft HEAD~1'
+alias gs='git status'
 
 # Docker / K8s
-alias dops="docker ps -a"
-alias dols="docker image ls"
+alias dops='docker ps -a'
+alias dols='docker image ls'
 alias dostop='docker stop $(docker ps -a -q)'
 alias dorm='docker rm $(docker ps -a -q)'
-alias k="kubectl"
+alias k='kubectl'
 
 # Node
-alias n="npm"
-alias ni="npm i"
-alias nid="npm i -D"
-alias nr="npm run"
-alias no="node"
-alias nov="node -v"
-alias y="yarn"
+alias n='npm'
+alias ni='npm i'
+alias nid='npm i -D'
+alias nr='npm run'
+alias no='node'
+alias nov='node -v'
+alias y='yarn'
