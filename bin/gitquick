@@ -1,12 +1,18 @@
 #!/usr/bin/env bash
 set -e
 
-git add .
+if [[ $# > 0 ]]; then
+  git add .
+  git commit -m "$*"
+  git push
+  exit 0
+fi
 
-if [[ $# == 0 ]]; then
+read -p "Commit amend and force push? (yY) " ans
+if [[ $ans == "y" || $ans == "Y" ]]; then
+  git add .
   git commit --amend --reuse-message HEAD
   git push --force-with-lease
 else
-  git commit -m "$*"
-  git push
+  echo "Abort"
 fi
