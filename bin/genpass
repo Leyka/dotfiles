@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -e
 
-# Generate password, optionally specifying the length
-length="${1:-20}"
+# Generate strong password, optionally specifying the length
+length="${1:-24}"
 openssl rand -base64 "$length"

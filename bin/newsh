@@ -18,5 +18,5 @@ EOF
 chmod +x "$1"
 
 if [[ "$2" == "-o"|| "$2" == "--open" ]]; then
-  vim "+normal G$" "$1"
+  vim -c "startinsert" "+normal G$" "$1"
 fi

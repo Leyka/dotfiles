@@ -1,4 +1,9 @@
 #!/usr/bin/env bash
 set -e
 
+if [[ $# != 1 ]]; then
+  echo "URL is missing (see: https://ytdl-org.github.io/youtube-dl/supportedsites.html)"
+  exit 1
+fi
+
 youtube-dl -x --audio-format mp3 --audio-quality 0 -o '%(title)s.%(ext)s' "$1"

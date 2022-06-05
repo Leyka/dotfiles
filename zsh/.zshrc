@@ -11,6 +11,7 @@ plugins=(
 fpath+=/opt/homebrew/share/zsh/site-functions
 autoload -U promptinit; promptinit
 prompt pure
+PURE_CMD_MAX_EXEC_TIME=0 # Always show exec. time after 1s
 ZSH_THEME=""
 
 # import functions
