@@ -21,3 +21,7 @@ function rmcd() {
   curr_dir="$(pwd)"
   cd .. && rm -rf "$curr_dir"
 }
+
+function clone() {
+  git clone "$1" && cd "$(basename "$1" .git)"
+}
