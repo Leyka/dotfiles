@@ -42,14 +42,22 @@ Run install script
 
 ### Finder
 
-Show home folder on finder by going to Finder `->` Preferences `->` Sidebar then check folders
+- Show home folder on finder
+  - Finder `->` Preferences `->` Sidebar then check folders
 
 ### iTerm2
 
-Change iTerm2 theme by going to Preferences `->` Appearance (👁) then select theme `Minimal`
+Configure iTerm2 theme by going to `Preferences`, then under:
 
-Go to Profiles (👤) section `->` click Other Actions on bottom left `->` Scroll to `Import JSON Profiles` `->` Import JSON file under `settings/iTerm.json`
+- General ⚙️
+  - under `Closing` tab, uncheck all boxes
+- Appearance (👁)
+  - select Theme: `Minimal`
+- Profiles (👤)
+  - click Other Actions on bottom left
+  - Scroll to `Import JSON Profiles`
+  - Import JSON file under `settings/iTerm.json`
 
 ### Last steps
 
-Fill email in `./gitconfig.local`
+- Fill email in `./gitconfig.local`
