@@ -27,7 +27,7 @@
   required = true
 
 [init]
-	defaultBranch = main
+  defaultBranch = main
 
 # Delta as git diff tool
 
