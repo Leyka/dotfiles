@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+set -e
+
+# force kill process that uses the port ($1)
+pid="$(lsof -t -i:$1)"
+kill -9 "$pid"
