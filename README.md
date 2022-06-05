@@ -1,5 +1,7 @@
 # dotfiles
 
+`~/.`
+
 ## macOS
 
 ### Tools
@@ -42,17 +44,13 @@ Run install script
 
 Show home folder on finder by going to Finder -> Preferences -> Sidebar then check folders
 
-### iTerm2 theme
+### iTerm2
 
-Change iTerm2 theme by going to Preferences -> Profiles
+Change iTerm2 theme by going to Preferences -> Appearance (👁) then select theme `Minimal`
 
-Click on Colors tab -> Color Presets... (bottom right) -> Import -> `~/.dotfiles/themes/Snazzy.itermcolors` then select `Snazzy`
+Go to Profiles (👤) section -> click Other Actions on bottom left -> Scroll to `Import JSON Profiles`
 
-Change font by going on Text tab -> Font -> select `Hack Nerd Font Mono`, size `15`, check `Use ligatures`
-
-Change cursor to `Vertical bar`
-
-Hide top bar by going to Appearance section (eye) -> General tab -> select theme `Minimal`
+Then import file under `settings/iTerm.json`
 
 ### Last steps
 
