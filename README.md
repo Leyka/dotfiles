@@ -8,6 +8,7 @@
 
 - [Firefox](https://www.mozilla.org/en-CA/firefox/new/)
 - [iTerm2](https://iterm2.com/downloads.html)
+- [Magnet](https://apps.apple.com/us/app/magnet/id441258766?mt=12)
 
 ### Github
 
@@ -51,18 +52,16 @@ Configure iTerm2 theme by going to `Preferences`, then under:
 
 - General ⚙️
   - under `Closing` tab, uncheck all boxes
-- Appearance (👁)
+- Appearance 👁
   - select Theme: `Minimal`
-- Profiles (👤)
+- Profiles 👤
   - click Other Actions on bottom left
   - Scroll to `Import JSON Profiles`
   - Import JSON file under `settings/iTerm.json`
 
-
 #### Preview
+
 <img width="600" alt="image" src="https://user-images.githubusercontent.com/8690545/172064332-595fd827-469a-4823-b778-7571e50e4159.png">
-
-
 
 ### Last steps
 
