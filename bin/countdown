@@ -11,7 +11,7 @@ UNITS = {
 
 def play_notification():
   for _ in range(3):
-    subprocess.Popen(['afplay', '/System/Library/Sounds/Tink.aiff'])
+    subprocess.Popen(['afplay', '/System/Library/Sounds/Tink.aiff'], stderr=subprocess.DEVNULL)
     sleep(0.1)
 
 def main():
@@ -21,7 +21,7 @@ def main():
     exit(1)
 
   raw_duration = argv[1]
-  maybe_unit = raw_duration[-1]
+  maybe_unit = raw_duration[-1].lower()
 
   if maybe_unit in UNITS:
     unit = UNITS.get(maybe_unit)

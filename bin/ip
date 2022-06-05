@@ -6,7 +6,7 @@ local_ip="$(ipconfig getifaddr en0)"
 if [[ -z "$local_ip" ]]; then
   echo "Offline 🤕"
   exit 1
-else
-  echo "Local : $local_ip"
-  echo "Public: $(curl -sS icanhazip.com)"
 fi
+
+echo "Local : $local_ip"
+echo "Public: $(curl -sS icanhazip.com)"
