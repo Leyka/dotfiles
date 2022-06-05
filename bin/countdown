@@ -1,0 +1,42 @@
+#!/usr/bin/env python
+from sys import argv
+from time import sleep
+import subprocess
+
+UNITS = {
+  's': 1,
+  'm': 60,
+  'h': 3600
+}
+
+def play_notification():
+  for _ in range(3):
+    subprocess.Popen(['afplay', '/System/Library/Sounds/Tink.aiff'])
+    sleep(0.1)
+
+def main():
+  if len(argv) != 2:
+    print('Missing arg: duration (seconds by default); optionally specify the unit {s,m,h}')
+    print('Example: countdown 1m or countdown 60')
+    exit(1)
+
+  raw_duration = argv[1]
+  maybe_unit = raw_duration[-1]
+
+  if maybe_unit in UNITS:
+    unit = UNITS.get(maybe_unit)
+    duration = float(raw_duration[:-1]) * unit
+  else:
+    duration = float(raw_duration)
+
+  while duration >= 0:
+    formatted = str(int(duration)).ljust(len(str(duration)))
+    print(f'⏰ Countdown (seconds): {formatted}', end='\r')
+    if duration == 0:
+      print('✅')
+      play_notification()
+    else:
+      sleep(1)
+    duration -= 1
+
+main()
