@@ -58,6 +58,12 @@ Configure iTerm2 theme by going to `Preferences`, then under:
   - Scroll to `Import JSON Profiles`
   - Import JSON file under `settings/iTerm.json`
 
+
+#### Preview
+<img width="600" alt="image" src="https://user-images.githubusercontent.com/8690545/172064332-595fd827-469a-4823-b778-7571e50e4159.png">
+
+
+
 ### Last steps
 
 - Fill email in `./gitconfig.local`
