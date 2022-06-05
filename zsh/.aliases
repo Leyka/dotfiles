@@ -44,7 +44,8 @@ alias gri="git rebase -i"
 alias gra="git rebase --abort"
 alias grc="git rebase --continue"
 alias grh="git reset --hard"
-alias grs="git reset --soft HEAD~1"
+alias grs="git reset --soft"
+alias grs1="git reset --soft HEAD~1"
 alias gs="git status"
 
 # Docker / K8s
