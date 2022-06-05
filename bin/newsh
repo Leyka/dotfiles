@@ -1,10 +1,22 @@
 #!/usr/bin/env bash
 set -e
 
+if [[ $# == 0 ]]; then
+  echo "Missing file name"
+  exit 1
+elif [[ -f "$1" ]]; then
+  echo "$1 already exists"
+  exit 1
+fi
+
 cat > "$1" <<EOF
 #!/usr/bin/env bash
+set -e
 
 EOF
 
 chmod +x "$1"
-vim $1
+
+if [[ "$2" == "-o"|| "$2" == "--open" ]]; then
+  vim "+normal G$" "$1"
+fi
