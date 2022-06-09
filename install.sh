@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 set -e
 
-sudo -v 
+sudo -v
 
 source install/macOS
 source install/brew
@@ -12,6 +12,7 @@ source install/golang
 source install/vim
 source install/nvim
 source install/git
+source install/keyboard
 source install/ohmyzsh
 
 echo "✅ Done!"
