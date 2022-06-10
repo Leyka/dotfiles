@@ -3,7 +3,7 @@ set -e
 
 local_ip="$(ipconfig getifaddr en0)"
 
-if [[ -z "$local_ip" ]]; then
+if [ -z "$local_ip" ]; then
   echo "Offline 🤕"
   exit 1
 fi

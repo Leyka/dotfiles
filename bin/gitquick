@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-if [[ $# -gt 0 ]]; then
+if [ $# -gt 0 ]; then
   git add .
   git commit -m "$*"
   git push
