@@ -34,7 +34,7 @@ alias vim='nvim'
 # Git
 alias ga='git add .'
 alias gb='git branch'
-alias gbd='git branch -d'
+alias gbd='git branch -D'
 alias gc='git commit -m'
 alias gca='git commit --amend --reuse-message HEAD'
 alias gcfd='git clean -fd'
