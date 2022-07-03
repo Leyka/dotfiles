@@ -8,7 +8,7 @@ function cdf() {
     exit 1
   fi
 
-  cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')"
+  cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')" || exit
 }
 
 # change directory and list files
@@ -23,5 +23,5 @@ function rmcd() {
 }
 
 function clone() {
-  git clone "$1" && cd "$(basename "$1" .git)"
+  git clone "$1" && cd "$(basename "$1" .git)" || exit
 }

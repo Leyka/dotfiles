@@ -8,7 +8,7 @@ stow git
 git lfs install
 
 # Create .gitconfig.local if doesn't exist
-[[ -f ~/.gitconfig.local ]] || cat > ~/.gitconfig.local <<EOF
+[ -f ~/.gitconfig.local ] || cat > ~/.gitconfig.local <<EOF
 [user]
   name = Skander
   email = ...@gmail.com

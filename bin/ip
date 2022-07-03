@@ -4,7 +4,7 @@ set -e
 local_ip="$(ipconfig getifaddr en0)"
 
 if [ -z "$local_ip" ]; then
-  echo "Offline 🤕"
+  echo "No internet"
   exit 1
 fi
 
