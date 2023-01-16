@@ -64,6 +64,7 @@ alias dops='docker ps -a'
 alias dols='docker image ls'
 alias dostop='docker stop $(docker ps -a -q)'
 alias dorm='docker rm $(docker ps -a -q)'
+alias dovrm='docker compose down --volumes'
 alias k='kubectl'
 
 # Node
