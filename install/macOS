@@ -35,10 +35,12 @@ defaults write com.apple.dock show-recents -bool false
 # Faster dock animation
 defaults write com.apple.dock expose-animation-duration -float 0.1
 
-# == Hot corners ==
+# == Hot corners & Spaces ==
 # Lock screen top-left+cmd
 defaults write com.apple.dock wvous-bl-corner -int 12
 defaults write com.apple.dock wvous-bl-modifier -int 1048576
+# Disable: Auto Reorder Spaces based on most recent use
+defaults write com.apple.dock "mru-spaces" -bool "false"
 
 # == Mouse/trackpack/bluetooth ==
 # Disable press-and-hold for keys in favor of key repeat
