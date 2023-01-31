@@ -11,17 +11,25 @@ function cdf() {
   cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')" || exit
 }
 
-# change directory and list files
-function cdl() {
-  cd "$1" && ls -lFAh --color
-}
-
+# remove current directory
 function rmcd() {
   local curr_dir
   curr_dir="$(pwd)"
   cd .. && rm -rf "$curr_dir"
 }
 
+# clone a git repo and cd into it
 function clone() {
   git clone "$1" && cd "$(basename "$1" .git)" || exit
+}
+
+# man with colors
+function man() {
+  LESS_TERMCAP_md=$'\e[01;34m' \
+  LESS_TERMCAP_me=$'\e[0m' \
+  LESS_TERMCAP_se=$'\e[0m' \
+  LESS_TERMCAP_so=$'\e[01;44;33m' \
+  LESS_TERMCAP_ue=$'\e[0m' \
+  LESS_TERMCAP_us=$'\e[01;32m' \
+  command man "$@"
 }
