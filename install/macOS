@@ -24,8 +24,6 @@ defaults write com.apple.finder WarnOnEmptyTrash -bool false
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 
 # == Dock ==
-# Remove all icons
-# defaults write com.apple.dock persistent-apps -array
 # Minimize windows into their application’s icon
 defaults write com.apple.dock minimize-to-application -bool true
 # Set the icon size of Dock items
@@ -45,6 +43,11 @@ defaults write com.apple.dock "mru-spaces" -bool "false"
 # == Mouse/trackpack/bluetooth ==
 # Disable press-and-hold for keys in favor of key repeat
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+# Faster mouse scroll speed
+defaults write com.apple.scrollwheel.scaling -float 0.7
+# Faster key repeat
+defaults write InitialKeyRepeat -int 10
+defaults write KeyRepeat -int 1
 # Increase sound quality for Bluetooth headphones/headsets
 defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
 
@@ -63,5 +66,5 @@ defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 defaults write com.apple.screencapture "disable-shadow" -bool true
 
 # == Apply changes ==
-killall Dock &> /dev/null
-killall Finder &> /dev/null
+killall Dock &>/dev/null
+killall Finder &>/dev/null

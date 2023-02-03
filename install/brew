@@ -13,6 +13,7 @@ packages=(
   coreutils
   bat
   exa
+  exiftool
   fd
   ffmpeg
   git
