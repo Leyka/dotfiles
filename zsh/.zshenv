@@ -1,16 +1,18 @@
 # bin
-export DOTFILES="$HOME/.dotfiles"
+export DOTFILES=~/.dotfiles
 export PATH="$DOTFILES/bin:$PATH"
 
 # Oh my zsh
-export ZSH=$HOME/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 
 # Pyenv
-export PYENV_ROOT="$HOME/.pyenv"
+export PYENV_ROOT=~/.pyenv
 export PATH="$PYENV_ROOT/bin:$PATH"
 
 # Go
-export GOPATH=$HOME/Lab/go
+export GOROOT=/opt/homebrew/opt/go/libexec
+export GOPATH=~/Lab/go
+export PATH="$GOPATH/bin:$PATH"
 
 # nvm
-export NVM_DIR="$HOME/.nvm"
+export NVM_DIR=~/.nvm

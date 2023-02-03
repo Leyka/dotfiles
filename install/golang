@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+set -e
 
-# Create directory
-mkdir -p ~/Lab/go
+go_path=~/Lab/go
+
+mkdir -p $go_path/src $go_path/bin $go_path/pkg
