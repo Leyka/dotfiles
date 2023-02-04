@@ -57,7 +57,7 @@ Configure iTerm2 theme by going to `Preferences`, then under:
 - Profiles 👤
   - click Other Actions on bottom left
   - Scroll to `Import JSON Profiles`
-  - Import JSON file under `settings/iTerm.json`
+  - Import JSON file under `misc/iTerm.json`
 
 #### Preview
 
