@@ -12,8 +12,8 @@ brew update && brew upgrade
 packages=(
   coreutils
   bat
-  exa
   exiftool
+  eza
   fd
   ffmpeg
   git
@@ -38,7 +38,7 @@ packages=(
   thefuck
   tree
   vim
-  youtube-dl
+  yt-dlp
   z
 )
 
