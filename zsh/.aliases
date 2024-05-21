@@ -1,34 +1,30 @@
 #!/usr/bin/env bash
 
-# Shortcuts
 alias ,,='cd ..'
 alias ..='cd ..'
 alias 2..='cd ../..'
 alias 3..='cd ../../..'
 alias 4..='cd ../../../..'
-alias 5..='cd ../../../../..'
 
 alias c='clear'
+alias cat='bat'
 alias cx='chmod +x'
 alias f='fuck'
+alias find='fd'
 alias got='git'
+alias grep='rg -i'
 alias hg='history|grep'
+alias l='eza -l'
+alias la='eza -la'
+alias ls='eza -l'
+alias mkdir='mkdir -p'
+alias ping='ping -c 4'
 alias s='sudo $(fc -ln -1)'
 alias rmrf='rm -rf'
 alias sudp='sudo'
 alias sz='exec zsh'
-alias ytdl='youtube-dl'
-
-# Replacements
-alias cat='bat'
-alias find='fd'
-alias grep='rg -i' # ripgrep
-alias mkdir='mkdir -p'
-alias l='eza -l'
-alias la='eza -la'
-alias ls='eza -l'
-alias ping='ping -c 4'
 alias top='gotop'
+alias ytdl='yt-dlp'
 alias vim='nvim'
 
 # Git
@@ -68,10 +64,8 @@ alias dovrm='docker compose down --volumes'
 alias k='kubectl'
 
 # Node
-alias n='npm'
 alias ni='npm i'
 alias nid='npm i -D'
 alias nr='npm run'
 alias ns='npm start'
 alias nt='npm test'
-alias y='yarn'
