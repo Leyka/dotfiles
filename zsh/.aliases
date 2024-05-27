@@ -8,6 +8,7 @@ alias 4..='cd ../../../..'
 
 alias c='clear'
 alias cat='bat'
+alias copy='pbcopy'
 alias cx='chmod +x'
 alias f='fuck'
 alias find='fd'
