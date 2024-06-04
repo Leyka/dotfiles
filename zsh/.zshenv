@@ -2,6 +2,9 @@
 export DOTFILES=~/.dotfiles
 export PATH="$DOTFILES/bin:$PATH"
 
+# brew 
+export PATH="/opt/homebrew/bin:$PATH"
+
 # Oh my zsh
 export ZSH=~/.oh-my-zsh
 

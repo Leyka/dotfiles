@@ -12,7 +12,6 @@ source install/golang
 source install/vim
 source install/nvim
 source install/git
-source install/keyboard
 source install/ohmyzsh
 
 echo "✅ Done!"

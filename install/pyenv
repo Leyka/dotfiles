@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-python_version="3.11"
+python_version="3.12"
 # Fetch latest stable version
 latest="$(curl -s https://endoflife.date/api/python.json | jq -r '.[0].cycle')"
 if [ -n "$latest" ]; then
@@ -19,7 +19,7 @@ if [ -z "$(pyenv versions | grep "$python_version" | tail -1)" ]; then
   echo "Installing Python v$python_version..."
   pyenv update
   pyenv install "$python_version"":latest"
-  pyenv global "$(pyenv versions | grep "$python_version")"
+  pyenv global "$python_version"
 else
   echo "Python v$python_version (latest) and is already installed."
 fi

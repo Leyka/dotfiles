@@ -12,18 +12,15 @@ brew update && brew upgrade
 packages=(
   coreutils
   bat
-  exiftool
   eza
   fd
   ffmpeg
   git
   git-lfs
   git-delta
-  httpie
   jq
   golang
   gotop
-  mdp
   mosh
   nmap
   nvm
@@ -51,8 +48,7 @@ fonts=(
   font-hack-nerd-font
 )
 
-brew tap homebrew/cask-fonts
-brew install --cask "${fonts[@]}"
+brew install "${fonts[@]}"
 
 # Cleanup
 brew cleanup

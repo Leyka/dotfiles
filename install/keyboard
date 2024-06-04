@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-# Install keyboard layout
-layout=$DOTFILES/misc/CustomFrenchCanada.bundle
-
-if [ -d "$layout" ]; then
-  sudo cp -R "$layout" /Library/Keyboard\ Layouts
-fi
