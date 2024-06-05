@@ -8,10 +8,10 @@ fi
 
 brew update && brew upgrade
 
-# Install brew packages
 packages=(
-  coreutils
   bat
+  coreutils
+  emacs
   eza
   fd
   ffmpeg
@@ -38,17 +38,24 @@ packages=(
   yt-dlp
   z
 )
-
 brew install "${packages[@]}"
 
-# Install fonts
 fonts=(
   font-fira-code
   font-cascadia-code
   font-hack-nerd-font
 )
-
 brew install "${fonts[@]}"
+
+apps=(
+  betterdisplay
+  dozer
+  maccy
+  netnewswire
+  scroll-reverser
+  vlc
+)
+brew install --cask "${apps[@]}"
 
 # Cleanup
 brew cleanup
