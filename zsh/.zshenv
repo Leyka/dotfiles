@@ -19,3 +19,6 @@ export PATH="$GOPATH/bin:$PATH"
 
 # nvm
 export NVM_DIR=~/.nvm
+
+# emacs
+export PATH="~/.config/emacs/bin:$PATH"
