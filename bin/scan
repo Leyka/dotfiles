@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+set -e
+
+if ! command -v nmap &>/dev/null; then
+    echo "nmap is not installed"
+    exit 1
+fi
+
+if [ $# -eq 0 ]; then
+    echo "Usage: scan <target> [<port>]" && echo
+    echo "<target>    : Target to scan, IP or domain name."
+    echo "<port>      : Optional. Can be a single, a range (1-100), or a list (80,443)."
+    exit 1
+fi
+
+target="$1"
+shift # Remove $1 (target) from the argument list
+
+if [ $# -eq 0 ]; then
+    echo "Scanning all ports (1-65535) on $target"
+    sudo nmap -sS -O -T4 -p- "$target"
+else
+    ports="$*"
+    echo "Scanning ports $ports on $target"
+    sudo nmap -sS -T4 -p "$ports" "$target"
+fi
