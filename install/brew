@@ -47,6 +47,7 @@ fonts=(
 brew install "${fonts[@]}"
 
 apps=(
+  appcleaner
   betterdisplay
   maccy
   netnewswire
