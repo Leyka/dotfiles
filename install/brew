@@ -11,16 +11,15 @@ brew update && brew upgrade
 packages=(
   bat
   coreutils
-  emacs
   eza
   fd
   ffmpeg
   git
   git-lfs
   git-delta
-  jq
   golang
   gotop
+  jordanbaird-ice
   mosh
   nmap
   nvm
@@ -49,7 +48,6 @@ brew install "${fonts[@]}"
 
 apps=(
   betterdisplay
-  dozer
   maccy
   netnewswire
   scroll-reverser

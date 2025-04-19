@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-python_version="3.12"
+python_version="3.13"
 # Fetch latest stable version
 latest="$(curl -s https://endoflife.date/api/python.json | jq -r '.[0].cycle')"
 if [ -n "$latest" ]; then
