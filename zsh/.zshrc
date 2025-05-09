@@ -1,6 +1,6 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 if [[ -r "$HOME/.cache/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-    source "$HOME/.cache/p10k-instant-prompt-${(%):-%n}.zsh"
+  source "$HOME/.cache/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
 # Configure zinit
@@ -51,9 +51,6 @@ setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
 
-export LS_COLORS='di=34:fi=32:ln=36:pi=33:so=35:bd=33:cd=33:or=31:mi=31:ex=32'
-export TERM=xterm-256color
-
 # Completion styling
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
@@ -66,8 +63,8 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(pyenv init --path)"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # loads nvm (node version manager)
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # loads nvm bash_completion
 
 # Import functions and aliases
 [ -f $HOME/.functions ] && source $HOME/.functions
