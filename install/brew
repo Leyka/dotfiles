@@ -14,12 +14,13 @@ packages=(
   eza
   fd
   ffmpeg
+  fzf
   git
   git-lfs
   git-delta
   golang
-  gotop
   jordanbaird-ice
+  htop
   mosh
   nmap
   nvm
@@ -31,11 +32,9 @@ packages=(
   stow
   tig
   tldr
-  thefuck
   tree
-  vim
   yt-dlp
-  z
+  zoxide
 )
 brew install "${packages[@]}"
 

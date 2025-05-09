@@ -4,12 +4,6 @@
 
 ## macOS
 
-### Tools
-
-- [Firefox](https://www.mozilla.org/en-CA/firefox/new/)
-- [iTerm2](https://iterm2.com/downloads.html)
-- [Magnet](https://apps.apple.com/us/app/magnet/id441258766?mt=12)
-
 ### Github
 
 Generate SSH key

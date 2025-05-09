@@ -2,11 +2,8 @@
 export DOTFILES=~/.dotfiles
 export PATH="$DOTFILES/bin:$PATH"
 
-# brew 
+# brew
 export PATH="/opt/homebrew/bin:$PATH"
-
-# Oh my zsh
-export ZSH=~/.oh-my-zsh
 
 # Pyenv
 export PYENV_ROOT=~/.pyenv
@@ -19,6 +16,3 @@ export PATH="$GOPATH/bin:$PATH"
 
 # nvm
 export NVM_DIR=~/.nvm
-
-# emacs
-export PATH="~/.config/emacs/bin:$PATH"

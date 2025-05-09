@@ -3,7 +3,7 @@
 # Create directory
 mkdir -p ~/.nvm
 
-# Link nvm default-packages (includes yarn)
+# Link nvm default-packages
 ln -sf $PWD/nvm/default-packages ~/.nvm
 
 # Install LTS with nvm

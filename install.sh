@@ -9,9 +9,7 @@ source install/zsh
 source install/nvm
 source install/pyenv
 source install/golang
-source install/vim
 source install/nvim
 source install/git
-source install/ohmyzsh
 
 echo "✅ Done!"

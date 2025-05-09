@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-set -e
-
-date '+%H:%M ⏰'
-date '+%A %B%e %Y 🗓'
-curl -s https://wttr.in/\?format=3
