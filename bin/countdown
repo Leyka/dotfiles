@@ -1,42 +1,42 @@
-#!/usr/bin/env python
-from sys import argv
-from time import sleep
-import subprocess
+#!/usr/bin/env bash
 
-UNITS = {
-  's': 1,
-  'm': 60,
-  'h': 3600
+play_sound() {
+  for _ in {1..2}; do
+    afplay /System/Library/Sounds/Ping.aiff &>/dev/null &
+    sleep 0.5
+  done
 }
 
-def play_sound():
-  for _ in range(3):
-    subprocess.Popen(['afplay', '/System/Library/Sounds/Ping.aiff'], stderr=subprocess.DEVNULL)
-    sleep(0.2)
+if [ $# -ne 1 ]; then
+  echo "Missing arg: duration (seconds by default); optionally specify the unit {s,m,h}"
+  echo "Example: countdown 1m or countdown 60"
+  exit 1
+fi
 
-def main():
-  if len(argv) != 2:
-    print('Missing arg: duration (seconds by default); optionally specify the unit {s,m,h}')
-    print('Example: countdown 1m or countdown 60')
-    exit(1)
+raw_duration=$1
+maybe_unit=${raw_duration: -1}
+maybe_unit=$(echo "$maybe_unit" | tr '[:upper:]' '[:lower:]')
 
-  raw_duration = argv[1]
-  maybe_unit = raw_duration[-1].lower()
+if [[ "$maybe_unit" == "s" ]]; then
+  duration=${raw_duration%?}
+elif [[ "$maybe_unit" == "m" ]]; then
+  duration=$(echo "${raw_duration%?} * 60" | bc)
+elif [[ "$maybe_unit" == "h" ]]; then
+  duration=$(echo "${raw_duration%?} * 3600" | bc)
+else
+  duration=$raw_duration
+fi
 
-  if maybe_unit in UNITS:
-    unit = UNITS.get(maybe_unit)
-    duration = float(raw_duration[:-1]) * unit
-  else:
-    duration = float(raw_duration)
+while [ "$(echo "$duration >= 0" | bc)" -eq 1 ]; do
+  formatted=$(printf "%d" "$duration")
+  printf "⏰ Countdown (seconds): %-${#duration}s\r" "$formatted"
 
-  while duration >= 0:
-    formatted = str(int(duration)).ljust(len(str(duration)))
-    print(f'⏰ Countdown (seconds): {formatted}', end='\r')
-    if duration == 0:
-      print('✅')
-      play_sound()
-    else:
-      sleep(1)
-    duration -= 1
+  if [ "$(echo "$duration == 0" | bc)" -eq 1 ]; then
+    echo "✅"
+    play_sound
+  else
+    sleep 1
+  fi
 
-main()
+  duration=$(echo "$duration - 1" | bc)
+done
