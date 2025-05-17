@@ -14,7 +14,6 @@ alias top='htop'
 alias ytdl='yt-dlp'
 alias vim='nvim'
 alias w='which'
-alias z='cd'
 
 # git
 alias gca='git commit --amend --reuse-message HEAD'

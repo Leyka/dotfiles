@@ -61,11 +61,9 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 # Shell integrations
 eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(fzf --zsh)"
-eval "$(zoxide init --cmd cd zsh)"
 eval "$(pyenv init --path)"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # loads nvm (node version manager)
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # loads nvm bash_completion
-
-# Import functions and aliases
+[ -f $DOTFILES/bin/z ] && source $DOTFILES/bin/z # z - jump around
 [ -f $HOME/.functions ] && source $HOME/.functions
 [ -f $HOME/.aliases ] && source $HOME/.aliases

@@ -32,7 +32,6 @@ packages=(
   tldr
   tree
   yt-dlp
-  zoxide
 )
 brew install "${packages[@]}"
 
