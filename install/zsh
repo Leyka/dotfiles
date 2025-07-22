@@ -5,5 +5,7 @@ rm -rf ~/.zshrc ~/.zshenv
 
 stow zsh
 
+touch ~/.hushlogin
+
 # Apply changes
 source ~/.zshrc

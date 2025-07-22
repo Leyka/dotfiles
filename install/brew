@@ -52,9 +52,5 @@ apps=(
 )
 brew install --cask "${apps[@]}"
 
-# https://github.com/mhaeuser/Battery-Toolkit
-brew tap mhaeuser/mhaeuser
-brew install battery-toolkit
-
 # Cleanup
 brew cleanup
