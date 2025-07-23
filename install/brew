@@ -45,6 +45,7 @@ brew install "${fonts[@]}"
 apps=(
   appcleaner
   betterdisplay
+  font-jetbrains-mono
   maccy
   netnewswire
   scroll-reverser

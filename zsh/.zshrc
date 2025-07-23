@@ -62,8 +62,10 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(fzf --zsh)"
 eval "$(pyenv init --path)"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # loads nvm (node version manager)
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # loads nvm bash_completion
 [ -f $DOTFILES/bin/z ] && source $DOTFILES/bin/z # z - jump around
+[ -s "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" ] && \. "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" # This loads nvm
+[ -s "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
+
+# Keep it at the very end
 [ -f $HOME/.functions ] && source $HOME/.functions
 [ -f $HOME/.aliases ] && source $HOME/.aliases

@@ -6,6 +6,9 @@ mkdir -p ~/.nvm
 # Link nvm default-packages
 ln -sf $PWD/nvm/default-packages ~/.nvm
 
+# Source nvm script
+[ -s "$HOME/.nvm/nvm.sh" ] && \. "$HOME/.nvm/nvm.sh"
+
 # Install LTS with nvm
 nvm install --lts
 nvm use --lts
