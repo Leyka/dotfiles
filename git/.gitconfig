@@ -2,6 +2,7 @@
   editor = nvim
   pager = delta
   excludesfile = ~/.gitignore.global
+  ignorecase = false
 
 [include]
   path = ~/.gitconfig.local

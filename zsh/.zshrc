@@ -23,7 +23,6 @@ zinit light zsh-users/zsh-completions
 # Add Snippets
 zinit snippet OMZP::colorize
 zinit snippet OMZP::common-aliases
-zinit snippet OMZP::git
 zinit snippet OMZP::sudo
 
 # Load Zsh completions
