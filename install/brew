@@ -28,6 +28,7 @@ packages=(
   ripgrep
   shellcheck
   stow
+  thefuck
   tig
   tldr
   tree

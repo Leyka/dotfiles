@@ -60,6 +60,7 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 # Shell integrations
 eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(fzf --zsh)"
+eval $(thefuck --alias)
 eval "$(pyenv init --path)"
 [ -f $DOTFILES/bin/z ] && source $DOTFILES/bin/z # z - jump around
 [ -s "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" ] && \. "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" # This loads nvm
