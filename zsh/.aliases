@@ -33,3 +33,12 @@ alias grh1='git reset --hard HEAD~1'
 alias grs='git reset'
 alias grs1='git reset --soft HEAD~1'
 alias gs='git status'
+
+# node
+alias n=npm
+alias p=pnpm
+
+# docker
+alias d=docker
+alias dc='docker compose'
+alias k=kubectl

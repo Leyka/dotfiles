@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+set -e
+
+rm -rf ~/.config/ghostty
+mkdir -p ~/.config/ghostty
+
+stow ghostty

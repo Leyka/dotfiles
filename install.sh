@@ -11,5 +11,6 @@ source install/pyenv
 source install/golang
 source install/nvim
 source install/git
+source install/ghostty
 
 echo "✅ Done!"

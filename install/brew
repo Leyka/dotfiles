@@ -26,7 +26,6 @@ packages=(
   neovim
   pyenv
   ripgrep
-  shellcheck
   stow
   thefuck
   tig
@@ -37,9 +36,10 @@ packages=(
 brew install "${packages[@]}"
 
 fonts=(
-  font-fira-code
   font-cascadia-code
   font-hack-nerd-font
+  font-jetbrains-mono
+  font-jetbrains-mono-nerd-font
 )
 brew install "${fonts[@]}"
 
@@ -47,6 +47,7 @@ apps=(
   appcleaner
   betterdisplay
   font-jetbrains-mono
+  ghostty
   maccy
   netnewswire
   scroll-reverser

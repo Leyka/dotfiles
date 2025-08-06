@@ -1,7 +1,7 @@
 [core]
   editor = nvim
   pager = delta
-  excludesfile = ~/.gitignore.global
+	excludesfile = ~/.gitignore.global
   ignorecase = false
 
 [include]
@@ -44,3 +44,6 @@
 
 [diff]
   colorMoved = default
+[user]
+	name = Skander
+	email = @gmail.com
