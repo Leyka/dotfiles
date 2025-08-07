@@ -51,6 +51,7 @@ apps=(
   maccy
   netnewswire
   scroll-reverser
+  spotmenu
   vlc
 )
 brew install --cask "${apps[@]}"
