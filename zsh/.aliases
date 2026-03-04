@@ -2,6 +2,7 @@
 
 alias ..='cd ..'
 alias ...='cd ../..'
+alias ....='cd ../../..'
 alias c='clear'
 alias cat='bat'
 alias grep='rg'
@@ -28,6 +29,7 @@ alias gpf='git push --force-with-lease'
 alias gpl='git pull'
 alias gplf='git pull -X theirs'
 alias gq='gitquick'
+alias gref='git reflog --oneline -10'
 alias grh='git reset --hard'
 alias grh1='git reset --hard HEAD~1'
 alias grs='git reset'
@@ -42,3 +44,4 @@ alias p=pnpm
 alias d=docker
 alias dc='docker compose'
 alias k=kubectl
+alias mk=minikube
