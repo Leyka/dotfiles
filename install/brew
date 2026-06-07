@@ -19,7 +19,7 @@ packages=(
   git
   git-lfs
   git-delta
-  golang
+  go
   htop
   jq
   k9s
@@ -31,7 +31,7 @@ packages=(
   ripgrep
   stow
   tig
-  tldr
+  tlrc
   tree
   yt-dlp
   zoxide
@@ -41,9 +41,10 @@ brew install "${packages[@]}"
 fonts=(
   font-cascadia-code
   font-hack-nerd-font
+  font-jetbrains-mono
   font-jetbrains-mono-nerd-font
 )
-brew install "${fonts[@]}"
+brew install --cask "${fonts[@]}"
 
 apps=(
   appcleaner
