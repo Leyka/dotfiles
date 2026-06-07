@@ -18,10 +18,10 @@ confirm-close-surface = false
 keybind = cmd+r>r=reload_config
 keybind = cmd+r>e=equalize_splits
 
-keybind = cmd+r>left=goto_split:left
-keybind = cmd+r>right=goto_split:right
-keybind = cmd+r>down=goto_split:down
-keybind = cmd+r>up=goto_split:up
+keybind = cmd+bracket_left=goto_split:left
+keybind = cmd+bracket_right=goto_split:right
+keybind = shift+cmd+bracket_left=goto_split:up
+keybind = shift+cmd+bracket_right=goto_split:down
 
 clipboard-paste-protection = false
 copy-on-select = clipboard
