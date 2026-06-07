@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# node
+mise use --global node@lts
+mise use --global pnpm@latest
+
+# python
+mise use --global python@latest
+
+# cleanup orphaned versions
+mise prune --yes

@@ -66,25 +66,7 @@ zstyle ':fzf-tab:*' fzf-bindings 'tab:accept'
 # Shell integrations
 eval "$(fzf --zsh)"
 eval "$(zoxide init zsh)"
-
-# Lazy-load pyenv
-_pyenv_load() {
-  eval "$(pyenv init -)"
-}
-python()  { unfunction python python3 pip pip3; _pyenv_load; python "$@"; }
-python3() { unfunction python python3 pip pip3; _pyenv_load; python3 "$@"; }
-pip()     { unfunction python python3 pip pip3; _pyenv_load; pip "$@"; }
-pip3()    { unfunction python python3 pip pip3; _pyenv_load; pip3 "$@"; }
-
-# Lazy-load nvm
-_nvm_load() {
-  [ -s "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" ] && \. "$HOMEBREW_PREFIX/opt/nvm/nvm.sh"
-  [ -s "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm"
-}
-nvm()  { unfunction nvm node npm npx; _nvm_load; nvm "$@"; }
-node() { unfunction nvm node npm npx; _nvm_load; node "$@"; }
-npm()  { unfunction nvm node npm npx; _nvm_load; npm "$@"; }
-npx()  { unfunction nvm node npm npx; _nvm_load; npx "$@"; }
+eval "$(mise activate zsh)"
 
 # Keep it at the very end
 [ -f $HOME/.functions ] && source $HOME/.functions

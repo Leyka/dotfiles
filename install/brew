@@ -25,9 +25,8 @@ packages=(
   k9s
   mosh
   nmap
-  nvm
+  mise
   neovim
-  pyenv
   ripgrep
   stow
   tig
