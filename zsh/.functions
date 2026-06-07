@@ -1,17 +1,14 @@
-#!/usr/bin/env bash
-
-# short for `cdfinder`
 # change working directory to the top-most Finder window location
 function cdf() {
   if [[ $OSTYPE != 'darwin'* ]]; then
     echo "Error: cannot run macOS command"
-    exit 1
+    return 1
   fi
 
-  cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')" || exit
+  cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')" || return
 }
 
 # clone a git repo and cd into it
 function clone() {
-  git clone "$1" && cd "$(basename "$1" .git)" || exit
+  git clone "$1" && cd "$(basename "$1" .git)" || return
 }

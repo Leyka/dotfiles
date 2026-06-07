@@ -34,7 +34,7 @@ defaults write com.apple.dock show-recents -bool false
 defaults write com.apple.dock expose-animation-duration -float 0.1
 
 # == Hot corners & Spaces ==
-# Lock screen top-left+cmd
+# Lock screen bottom-left+cmd
 defaults write com.apple.dock wvous-bl-corner -int 12
 defaults write com.apple.dock wvous-bl-modifier -int 1048576
 # Disable: Auto Reorder Spaces based on most recent use
@@ -46,8 +46,8 @@ defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 # Faster mouse scroll speed
 defaults write com.apple.scrollwheel.scaling -float 0.7
 # Faster key repeat
-defaults write InitialKeyRepeat -int 10
-defaults write KeyRepeat -int 1
+defaults write NSGlobalDomain InitialKeyRepeat -int 10
+defaults write NSGlobalDomain KeyRepeat -int 1
 # Increase sound quality for Bluetooth headphones/headsets
 defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
 

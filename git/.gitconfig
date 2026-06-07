@@ -12,14 +12,6 @@
 
 [color]
   ui = always
-  branch = always
-  diff = always
-  interactive = always
-  status = always
-  grep = always
-  pager = true
-  decorate = always
-  showbranch = always
 
 [filter "lfs"]
   clean = git-lfs clean -- %f
@@ -44,6 +36,16 @@
 
 [diff]
   colorMoved = default
-[user]
-	name = Skander
-	email = @gmail.com
+
+[push]
+  default = current
+  autoSetupRemote = true
+
+[pull]
+  rebase = true
+
+[rebase]
+  autostash = true
+
+[fetch]
+  prune = true

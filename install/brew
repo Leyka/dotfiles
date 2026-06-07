@@ -12,14 +12,17 @@ packages=(
   bat
   coreutils
   eza
+  fd
   ffmpeg
   fzf
+  gh
   git
   git-lfs
   git-delta
   golang
-  jordanbaird-ice
   htop
+  jq
+  k9s
   mosh
   nmap
   nvm
@@ -27,18 +30,17 @@ packages=(
   pyenv
   ripgrep
   stow
-  thefuck
   tig
   tldr
   tree
   yt-dlp
+  zoxide
 )
 brew install "${packages[@]}"
 
 fonts=(
   font-cascadia-code
   font-hack-nerd-font
-  font-jetbrains-mono
   font-jetbrains-mono-nerd-font
 )
 brew install "${fonts[@]}"
@@ -46,13 +48,12 @@ brew install "${fonts[@]}"
 apps=(
   appcleaner
   betterdisplay
-  font-jetbrains-mono
   ghostty
+  jordanbaird-ice
   maccy
   netnewswire
   scroll-reverser
   spotmenu
-  vlc
 )
 brew install --cask "${apps[@]}"
 
