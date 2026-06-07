@@ -3,4 +3,5 @@ set -e
 
 # Generate strong password, optionally specifying the length
 length="${1:-24}"
-openssl rand -base64 "$length"
+openssl rand -base64 48 | tr -d '=/+' | head -c "$length"
+echo

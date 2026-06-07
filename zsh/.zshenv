@@ -1,3 +1,6 @@
+export EDITOR=nvim
+export VISUAL=nvim
+
 # bin
 export DOTFILES=~/.dotfiles
 export PATH="$DOTFILES/bin:$PATH"
@@ -22,3 +25,6 @@ export PATH="$GOPATH/bin:$PATH"
 
 # nvm
 export NVM_DIR=~/.nvm
+
+# Shell
+export LS_COLORS="$($HOMEBREW_PREFIX/bin/vivid generate snazzy)"

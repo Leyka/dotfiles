@@ -2,5 +2,9 @@
 set -e
 
 # force kill process that uses the port ($1)
-pid="$(lsof -t -i:$1)"
+pid="$(lsof -t -i:"$1")"
+if [ -z "$pid" ]; then
+  echo "Nothing on port $1"
+  exit 1
+fi
 kill -9 "$pid"

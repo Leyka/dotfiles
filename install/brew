@@ -33,6 +33,7 @@ packages=(
   tig
   tlrc
   tree
+  vivid
   yt-dlp
   zoxide
 )
