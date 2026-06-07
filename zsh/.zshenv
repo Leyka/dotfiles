@@ -1,6 +1,7 @@
 # bin
 export DOTFILES=~/.dotfiles
 export PATH="$DOTFILES/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 # brew
 export HOMEBREW_PREFIX="/opt/homebrew"

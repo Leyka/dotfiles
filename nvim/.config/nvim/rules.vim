@@ -26,6 +26,12 @@ set smartcase
 set ignorecase
 set incsearch
 
+" coc.nvim needs a real node binary, not the nvm shell function.
+let s:coc_node_path = expand('~/.local/bin/node')
+if filereadable(s:coc_node_path) && executable(s:coc_node_path)
+	let g:coc_node_path = s:coc_node_path
+endif
+
 :set completeopt-=preview " For No Previews
 
 " Nerdtree
