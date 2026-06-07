@@ -5,5 +5,4 @@ rm -rf ~/.config/nvim
 rm -rf ~/.local/share/nvim/lazy
 stow nvim
 
-# lazy.nvim self-bootstraps on first launch, then installs all plugins
-nvim --headless "+Lazy! sync" +qa || true
+echo "nvim configured. Open nvim to install plugins."
