@@ -1,16 +1,16 @@
-#!/usr/bin/env zsh
-set -e
+#!/usr/bin/env bash
+set -euo pipefail
 
 sudo -v
 
-source install/macOS
-source install/brew
-source install/zsh
-source install/nvm
-source install/pyenv
-source install/golang
-source install/nvim
-source install/git
-source install/ghostty
+bash install/macOS
+bash install/brew
+bash install/zsh
+bash install/nvm
+bash install/pyenv
+bash install/golang
+bash install/nvim
+bash install/git
+bash install/ghostty
 
 echo "✅ Done!"
