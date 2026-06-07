@@ -2,10 +2,15 @@ theme = 0x96f
 background = 262b30
 font-family = JetBrainsMono Nerd Font
 font-size = 16
+font-feature = calt
+font-feature = liga
 macos-titlebar-style = transparent
 window-colorspace = display-p3
 
 working-directory = home
+shell-integration = detect
+cursor-style = bar
+cursor-style-blink = false
 mouse-hide-while-typing = true
 window-padding-balance = true
 confirm-close-surface = false

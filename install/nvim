@@ -1,12 +1,9 @@
 #!/usr/bin/env bash
+set -euo pipefail
 
-# Link dotfiles
 rm -rf ~/.config/nvim
+rm -rf ~/.local/share/nvim/lazy
 stow nvim
 
-# Install vim-plug for neovim
-[ -f ~/.config/nvim/autoload/plug.vim ] ||
-  curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-# Install plugins
-nvim +'PlugInstall --sync' +qa
+# lazy.nvim self-bootstraps on first launch, then installs all plugins
+nvim --headless "+Lazy! sync" +qa || true
